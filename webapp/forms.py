@@ -25,6 +25,7 @@ class myForm(forms.ModelForm):
         'ChiefComplaints':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Examinedby':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Verifiedby':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'PastHistory':forms.TextInput(attrs={'class':'form-control m-input','name':'PastHistory'}),
        
 
         }

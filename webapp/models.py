@@ -20,7 +20,17 @@ class formModel(models.Model):
 	Kureid = models.CharField(max_length=120,default=get_random_string(length=32))
 	ChiefComplaints = models.CharField(max_length=120,null=True,blank=True)
 	Historyofillness = models.TextField(null=True,blank=True)
-	PastHistory = models.TextField(null=True,blank=True)
+	PastHistory0 = models.CharField(max_length=120,null=True,blank=True,name="[0][PastHistory]")
+	PastHistory1 = models.CharField(max_length=120,null=True,blank=True,name="[1][PastHistory]")
+	PastHistory2 = models.CharField(max_length=120,null=True,blank=True,name="[2][PastHistory]")
+	PastHistory3 = models.CharField(max_length=120,null=True,blank=True,name="[3][PastHistory]")
+	PastHistory4 = models.CharField(max_length=120,null=True,blank=True,name="[4][PastHistory]")
+	PastHistory5 = models.CharField(max_length=120,null=True,blank=True,name="[5][PastHistory]")
+	PastHistory6 = models.CharField(max_length=120,null=True,blank=True,name="[6][PastHistory]")
+	PastHistory7 = models.CharField(max_length=120,null=True,blank=True,name="[7][PastHistory]")
+	PastHistory8 = models.CharField(max_length=120,null=True,blank=True,name="[8][PastHistory]")
+	PastHistory9 = models.CharField(max_length=120,null=True,blank=True,name="[9][PastHistory]")
+	PastHistor10 = models.CharField(max_length=120,null=True,blank=True,name="[10][PastHistory]")
 	Familyhistory = models.TextField(null=True,blank=True)
 	Medicationhistroy = models.TextField(null=True,blank=True)
 	Alcohol = models.BooleanField(default=False,blank=True)
@@ -38,6 +48,7 @@ class formModel(models.Model):
 
 class newModel(models.Model):
 	name = models.CharField(max_length=120)
+	age = models.ManyToManyField(formModel)
 
 
 
