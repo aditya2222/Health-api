@@ -15,6 +15,7 @@ var WizardDemo = function () {
 
         //== Validation before going to next page
         wizard.on('beforeNext', function(wizard) {
+    
             if (validator.form() !== true) {
                 return false;  // don't go to the next step
             }
@@ -22,7 +23,9 @@ var WizardDemo = function () {
 
         //== Change event
         wizard.on('change', function(wizard) {
+              $("#m_form").submit();
             mApp.scrollTop();
+
         });
     }
 
@@ -156,6 +159,9 @@ var WizardDemo = function () {
 
             //== Submit valid form
             submitHandler: function (form) {
+
+             
+
                 
             }
         });   
@@ -175,6 +181,7 @@ var WizardDemo = function () {
                 //== See: http://malsup.com/jquery/form/#ajaxSubmit
                 formEl.ajaxSubmit({
                     success: function() {
+                 
                         mApp.unprogress(btn);
                         //mApp.unblock(formEl);
 
@@ -199,10 +206,16 @@ var WizardDemo = function () {
             initWizard(); 
             initValidation();
             initSubmit();
+
+
+
         }
     };
 }();
 
+
 jQuery(document).ready(function() {    
     WizardDemo.init();
+
+
 });

@@ -1,5 +1,5 @@
 from django import forms
-from .models import stepOneModel
+from .models import formModel
 
 BIRTH_YEAR_CHOICES = ('1980', '1981', '1982')
 FAVORITE_COLORS_CHOICES = (
@@ -12,14 +12,22 @@ FAVORITE_COLORS_CHOICES = (
 class myForm(forms.ModelForm):
 
     class Meta:
-        model = stepOneModel
+        model = formModel
         fields = '__all__'
 
         widgets = {
-        'fullName':forms.TextInput(attrs={'class':'form-control m-input'}),
-        'emailAddress':forms.TextInput(attrs={'class':'form-control m-input'}),
-        'contact':forms.TextInput(attrs={'class':'form-control m-input'}),
-        'amount':forms.TextInput(attrs={'class':'form-control m-input'}),
+        'Name':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Age':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Opno':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Ipno':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Phoneno':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Kureid':forms.TextInput(attrs={'class':'form-control m-input','readonly':'true'}),
+        'ChiefComplaints':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Examinedby':forms.TextInput(attrs={'class':'form-control m-input',}),
+        'Verifiedby':forms.TextInput(attrs={'class':'form-control m-input',}),
+       
 
         }
+
+
     

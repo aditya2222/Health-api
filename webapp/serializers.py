@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import stepOneModel
+from .models import formModel
 
 
 
 class employeeSerializer(serializers.ModelSerializer):
 
 	class Meta:
-		model = stepOneModel
+		model = formModel
 		fields = '__all__'
 
 

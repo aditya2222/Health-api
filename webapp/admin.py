@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import stepOneModel
+from .models import formModel
 # Register your models here.
 
-admin.site.register(stepOneModel)
+admin.site.register(formModel)
