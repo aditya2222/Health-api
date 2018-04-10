@@ -4,22 +4,22 @@ var Select2 = function() {
     var demos = function() {
         // basic
         $('#m_select2_1, #m_select2_1_validate').select2({
-            placeholder: "Select a state"
+            placeholder: "Select"
         });
 
         // nested
         $('#m_select2_2, #m_select2_2_validate').select2({
-            placeholder: "Select a state"
+            placeholder: "Select"
         });
 
         // multi select
         $('#m_select2_3, #m_select2_3_validate').select2({
-            placeholder: "Select a state",
+            placeholder: "Select",
         });
 
         // basic
         $('#m_select2_4').select2({
-            placeholder: "Select a state",
+            placeholder: "Select",
             allowClear: true
         });
 
@@ -161,7 +161,7 @@ var Select2 = function() {
 
             // multi select
             $('#m_select2_3_modal').select2({
-                placeholder: "Select a state",
+                placeholder: "Select",
             });
 
             // basic

@@ -31,7 +31,18 @@ class formModel(models.Model):
 	PastHistory8 = models.CharField(max_length=120,null=True,blank=True,name="[8][PastHistory]")
 	PastHistory9 = models.CharField(max_length=120,null=True,blank=True,name="[9][PastHistory]")
 	PastHistor10 = models.CharField(max_length=120,null=True,blank=True,name="[10][PastHistory]")
-	Familyhistory = models.TextField(null=True,blank=True)
+	FamilyHistory0 = models.CharField(max_length=120,null=True,blank=True,name="[0][FamilyHistory]")
+	FamilyHistory1 = models.CharField(max_length=120,null=True,blank=True,name="[1][FamilyHistory]")
+	FamilyHistory2 = models.CharField(max_length=120,null=True,blank=True,name="[2][FamilyHistory]")
+	FamilyHistory3 = models.CharField(max_length=120,null=True,blank=True,name="[3][FamilyHistory]")
+	FamilyHistory4 = models.CharField(max_length=120,null=True,blank=True,name="[4][FamilyHistory]")
+	FamilyHistory5 = models.CharField(max_length=120,null=True,blank=True,name="[5][FamilyHistory]")
+	FamilyHistory6 = models.CharField(max_length=120,null=True,blank=True,name="[6][FamilyHistory]")
+	FamilyHistory7 = models.CharField(max_length=120,null=True,blank=True,name="[7][FamilyHistory]")
+	FamilyHistory8 = models.CharField(max_length=120,null=True,blank=True,name="[8][FamilyHistory]")
+	FamilyHistory9 = models.CharField(max_length=120,null=True,blank=True,name="[9][FamilyHistory]")
+	FamilyHistory10 = models.CharField(max_length=120,null=True,blank=True,name="[10][FamilyHistory]")
+	ProvisionalDiagnosis = models.CharField(max_length=150,blank=True,null=True)
 	Medicationhistroy = models.TextField(null=True,blank=True)
 	Alcohol = models.BooleanField(default=False,blank=True)
 	Smoking = models.BooleanField(default=False,blank=True)
@@ -46,9 +57,7 @@ class formModel(models.Model):
 	def __str__(self):
 		return self.Name
 
-class newModel(models.Model):
-	name = models.CharField(max_length=120)
-	age = models.ManyToManyField(formModel)
+
 
 
 

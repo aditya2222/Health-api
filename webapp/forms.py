@@ -16,6 +16,7 @@ class myForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
+        'ProvisionalDiagnosis':forms.SelectMultiple(),
         'Name':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Age':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Opno':forms.TextInput(attrs={'class':'form-control m-input',}),
