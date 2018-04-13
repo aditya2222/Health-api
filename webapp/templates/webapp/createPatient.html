@@ -1,21 +1,21 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4
-Version: 5.0.6.1
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<html lang="en" >
-<!-- begin::Head -->
-<head>
+    {% load staticfiles %}
+    <!DOCTYPE html>
+    <!-- 
+    Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4
+    Version: 5.0.6.1
+    Author: KeenThemes
+    Website: http://www.keenthemes.com/
+    Contact: support@keenthemes.com
+    Follow: www.twitter.com/keenthemes
+    Dribbble: www.dribbble.com/keenthemes
+    Like: www.facebook.com/keenthemes
+    Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+    Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+    License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+    -->
+    <html lang="en" >
+    <!-- begin::Head -->
+    <head>
     <meta charset="utf-8" />
     <title>
         Metronic | Form Wizard 1
@@ -76,10 +76,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-</head>
-<!-- end::Head -->
-<!-- end::Body -->
-<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+    </head>
+    <!-- end::Head -->
+    <!-- end::Body -->
+    <body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
     <!-- begin:: Page -->
     <div class="m-grid m-grid--hor m-grid--root m-page">
         <!-- BEGIN: Header -->
@@ -1123,10 +1123,10 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
     </div>
-</header>
-<!-- END: Header -->        
-<!-- begin::Body -->
-<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+    </header>
+    <!-- END: Header -->        
+    <!-- begin::Body -->
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
     <!-- BEGIN: Left Aside -->
     <button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
         <i class="la la-close"></i>
@@ -3051,9 +3051,9 @@ License: You must have a valid license purchased only from themeforest(the above
         </ul>
     </div>
     <!-- END: Aside Menu -->
-</div>
-<!-- END: Left Aside -->
-<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    </div>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
     <!-- BEGIN: Subheader -->
     <div class="m-subheader ">
         <div class="d-flex align-items-center">
@@ -3330,7 +3330,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </label>
                                             <div class="col-xl-9 col-lg-9">
 
-                                                <input type="number" name="Age" value="0" min="0"> <br>
+                                                <input type="number" name="Age" id="number" value="0" min="0"> <br>
 
                                                 We'll never share your email with anyone else
 
@@ -3340,12 +3340,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="col-xl-3 col-lg-3 col-form-label">
                                                 * Gender:
                                             </label>
-                                            <div class="col-xl-9 col-lg-9">
-
-
-
-
-                                                {{form.genderChoice}}
+                                            <div class="col-xl-9 col-lg-9"> 
+                                                <input type="radio" name="genderChoice" value="Male">Male
+                                                <input type="radio" name="genderChoice" value="Female">Female
 
 
 
@@ -3357,7 +3354,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 * OP No:
                                             </label>
                                             <div class="col-xl-9 col-lg-9">
-                                                <input type="number" value="0" name="Opno" min="0">
+                                                <input type="number" value="0" id="number1" name="Opno" min="0">
 
 
 
@@ -3369,7 +3366,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 * IP No:
                                             </label>
                                             <div class="col-xl-9 col-lg-9">
-                                                <input type="number" value="0" min="0" name="Ipno">
+                                                <input type="number" id="number2" value="0" min="0" name="Ipno">
 
 
 
@@ -3393,7 +3390,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 * Phone No:
                                             </label>
                                             <div class="col-xl-9 col-lg-9">
-                                              <input type="number" name="Phoneno" min="0">
+                                              <input type="text" maxlength="10" name="Phoneno"  id="number3" placeholder="+91**********">
 
 
 
@@ -3418,12 +3415,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                             Account Details
                                         </h3>
                                     </div>
-                                    <div class="form-group m-form__group row">
+                                   
+                                                                       <div class="form-group m-form__group row">
                                         <label class="col-form-label col-lg-3 col-sm-12">
                                             * Chief Complaints
                                         </label>
                                         <div class="col-lg-4 col-md-9 col-sm-12">
-                                            <select class="form-control m-select2" id="m_select2_2" name="ChiefComplaints" multiple="multiple" style="width:100%">
+                                            <select class="form-control m-select2" id="m_select2_4" name="ChiefComplaints" multiple="multiple" style="width:100%">
                                                 <optgroup label="Alaskan/Hawaiian Time Zone">
                                                     <option value="AK" selected>
                                                         Hypertension
@@ -3590,12 +3588,15 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                         </div>
                                     </div>
+
+                           
+
                                     <div class="form-group m-form__group row">
                                         <div class="col-lg-6 m-form__group-sub">
                                             <label class="form-control-label">
                                                 * History Of Illness:
                                             </label>
-                                            {{form.Historyofillness}}
+                                                  <input type="text"  style="height:80px" class="form-control" name="Historyofillness">
 
                                         </div>
 
@@ -3605,7 +3606,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             * Past History
                                         </label>
                                         <div class="col-lg-4 col-md-9 col-sm-12">
-                                            <select class="form-control m-select2" id="m_select2_1" name="PastHistory" multiple="multiple" style="width:100%">
+                                            <select class="form-control m-select2" id="m_select2_8" name="PastHistory" multiple="multiple" style="width:100%">
                                                 <optgroup label="Alaskan/Hawaiian Time Zone">
                                                     <option value="AK" selected>
                                                         Hypertension
@@ -3780,7 +3781,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             * Family History
                                         </label>
                                         <div class="col-lg-4 col-md-9 col-sm-12">
-                                            <select class="form-control m-select2" id="m_select2_4" name="FamilyHistory" multiple="multiple" style="width:100%">
+                                            <select class="form-control m-select2" id="m_select2_6" name="FamilyHistory" multiple="multiple" style="width:100%">
                                                 <optgroup label="Alaskan/Hawaiian Time Zone">
                                                     <option value="AK" selected>
                                                         Hypertension
@@ -3954,7 +3955,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * Medication History:
                                             </label>
-                                            <input type="text" name="Medicationhistroy" style="height:80px" class="form-control">
+                                            <input type="text"  style="height:80px" class="form-control" name="Medicationhistroy">
 
                                         </div>
 
@@ -4034,7 +4035,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * Summary:
                                             </label>
-                                            <input type="text" name="Summary" style="height:80px" class="form-control">
+                                            <input type="text" name="Summary" class="form-control" style="height:80px">
 
                                         </div>
 
@@ -4266,7 +4267,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * Chief Complaints:
                                             </label>
-                                            {{form.ChiefComplaints}}
+                                           
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row">
@@ -4274,7 +4275,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * History Of Illness:
                                             </label>
-                                            {{form.Historyofillness}}
+                                        
                                         </div>
                                     </div>
 
@@ -4284,7 +4285,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * Family History:
                                             </label>
-                                            {{form.Familyhistory}}
+                                           
                                         </div>
                                     </div>
                                     <div class="form-group m-form__group row">
@@ -4292,7 +4293,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <label class="form-control-label">
                                                 * Medication History:
                                             </label>
-                                            {{form.Medicationhistroy}}
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -4337,7 +4338,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-3">
                                                             <span class="m-switch m-switch--icon">
                                                                 <label>
-                                                                    {{form.Alcohol}}
+                                                                  
                                                                     <span></span>
                                                                 </label>
                                                             </span>
@@ -4350,7 +4351,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-3">
                                                             <span class="m-switch m-switch--icon">
                                                                 <label>
-                                                                    {{form.Smoking}}
+                                                                  
                                                                     <span></span>
                                                                 </label>
                                                             </span>
@@ -4363,7 +4364,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-3">
                                                             <span class="m-switch m-switch--icon">
                                                                 <label>
-                                                                    {{form.Bowel}}
+                                                                   
                                                                     <span></span>
                                                                 </label>
                                                             </span>
@@ -4377,7 +4378,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-3">
                                                             <span class="m-switch m-switch--icon">
                                                                 <label>
-                                                                    {{form.Bladder}}
+                                                                    
                                                                     <span></span>
                                                                 </label>
                                                             </span>
@@ -4391,7 +4392,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="col-3">
                                                             <span class="m-switch m-switch--icon">
                                                                 <label>
-                                                                    {{form.Sleep}}
+                                                                   
                                                                     <span></span>
                                                                 </label>
                                                             </span>
@@ -4411,9 +4412,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                      </label>
 
                                                  </div>
-                                                 <div class="col-lg-6">
-                                                    {{form.Summary}}
-                                                </div>
+                                                
 
                                                 <div class="form-group m-form__group m-form__group--sm row">
                                                     <label class="col-xl-4 col-lg-4 col-form-label">
@@ -4421,7 +4420,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </label>
                                                     <div class="col-xl-8 col-lg-8">
 
-                                                        {{form.Examinedby}}
+                                                       \
                                                     </div>
                                                 </div>
 
@@ -4431,7 +4430,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     </label>
                                                     <div class="col-xl-8 col-lg-8">
 
-                                                        {{form.Verifiedby}}
+                                                        
                                                     </div>
                                                 </div>
 
@@ -4488,21 +4487,21 @@ License: You must have a valid license purchased only from themeforest(the above
          </div>
          <!--end: Form Actions -->
      </form>
- </div>
- <!--end: Form Wizard Form-->
-</div>
-<!--end: Form Wizard-->
-</div>
-<!--End::Main Portlet-->
-</div>
+    </div>
+    <!--end: Form Wizard Form-->
+    </div>
+    <!--end: Form Wizard-->
+    </div>
+    <!--End::Main Portlet-->
+    </div>
 
-</div>
-</div>
-</div>
-</div>
-<!-- end:: Body -->
-<!-- begin::Footer -->
-<footer class="m-grid__item     m-footer ">
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- end:: Body -->
+    <!-- begin::Footer -->
+    <footer class="m-grid__item     m-footer ">
     <div class="m-container m-container--fluid m-container--full-height m-page__container">
         <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
             <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
@@ -4552,12 +4551,12 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
     </div>
-</footer>
-<!-- end::Footer -->
-</div>
-<!-- end:: Page -->
-<!-- begin::Quick Sidebar -->
-<div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
+    </footer>
+    <!-- end::Footer -->
+    </div>
+    <!-- end:: Page -->
+    <!-- begin::Quick Sidebar -->
+    <div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
     <div class="m-quick-sidebar__content m--hide">
         <span id="m_quick_sidebar_close" class="m-quick-sidebar__close">
             <i class="la la-close"></i>
@@ -5137,14 +5136,14 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
     </div>
-</div>
-<!-- end::Quick Sidebar -->         
-<!-- begin::Scroll Top -->
-<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+    </div>
+    <!-- end::Quick Sidebar -->         
+    <!-- begin::Scroll Top -->
+    <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
     <i class="la la-arrow-up"></i>
-</div>
-<!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
-<ul class="m-nav-sticky" style="margin-top: 30px;">
+    </div>
+    <!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
+    <ul class="m-nav-sticky" style="margin-top: 30px;">
             <!--
             <li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
                 <a href="">
@@ -5323,31 +5322,104 @@ License: You must have a valid license purchased only from themeforest(the above
         this.wrapper.remove();
         this.element.show();
     }
-});
+    });
 
         $( "#combobox" ).combobox();
         $( "#toggle" ).on( "click", function() {
           $( "#combobox" ).toggle();
       });
     } );
-</script>
+    </script>
 
-<script type="text/javascript">
-function randomString(length, chars) {
+    <script type="text/javascript">
+    function randomString(length, chars) {
     var result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
         return result;
-    
-    console.log(result);
-}
-var rString = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-document.getElementById('myLabel').value = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');;
-</script>
+    }
+    var rString = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-</body>
-<!-- end::Body -->
-</html>
+    document.getElementById('myLabel').value = randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');;
+    </script>
+
+    <script type="text/javascript">
+    var number = document.getElementById('number');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+    }
+    </script>
+    <script type="text/javascript">
+    var number = document.getElementById('number1');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+    }
+    </script>
+    <script type="text/javascript">
+    var number = document.getElementById('number2');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+    }
+    </script>
+
+
+        <script type="text/javascript">
+    var number = document.getElementById('number3');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+    }
+
+
+    $(document).ready(function() {
+    $("#number3").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl/cmd+A
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: Ctrl/cmd+C
+            (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: Ctrl/cmd+X
+            (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+    </script>
+
+    </body>
+    <!-- end::Body -->
+    </html>
 
 
 

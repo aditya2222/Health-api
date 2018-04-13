@@ -18,13 +18,14 @@ class myForm(forms.ModelForm):
         widgets = {
         'ProvisionalDiagnosis':forms.SelectMultiple(),
         'FamilyHistory':forms.SelectMultiple(),
-        'PastHistory':forms.SelectMultiple(),
         'Name':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Kureid':forms.TextInput(attrs={'class':'form-control m-input','readonly':'true',}),
         'ChiefComplaints':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Examinedby':forms.TextInput(attrs={'class':'form-control m-input',}),
         'Verifiedby':forms.TextInput(attrs={'class':'form-control m-input',}),
         'PastHistory':forms.TextInput(attrs={'class':'form-control m-input','name':'PastHistory'}),
+        'ChiefComplaints':forms.SelectMultiple(),
+        'PastHistory':forms.SelectMultiple(),
         
        
 

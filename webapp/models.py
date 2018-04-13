@@ -6,24 +6,20 @@ connect('appDB')
 # Create your models here.
 
 class formModel(models.Model):
-	GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-    )
 	Name = models.CharField(max_length=120,default="Unnamed")
 	Age = models.IntegerField(default=0,blank=True)
-	genderChoice = models.CharField(max_length=10,null=True,blank=True,choices=GENDER_CHOICES)
+	genderChoice = models.CharField(max_length=10,null=True,blank=True)
 	Opno = models.IntegerField(default=0,blank=True)
 	Ipno = models.IntegerField(default=0,blank=True)
 	Address = models.TextField(null=True,blank=True)
 	Phoneno = models.IntegerField(blank=True)
 	Kureid = models.CharField(max_length=120,blank=True,null=True)
 	ChiefComplaints = models.CharField(max_length=120,null=True,blank=True)
-	Historyofillness = models.TextField(null=True,blank=True)
+	Historyofillness = models.CharField(max_length=120,null=True,blank=True)
 	PastHistory = models.CharField(max_length=150,blank=True,null=True)
 	FamilyHistory = models.CharField(max_length=150,blank=True,null=True)
 	ProvisionalDiagnosis = models.CharField(max_length=150,blank=True,null=True)
-	Medicationhistroy = models.TextField(null=True,blank=True)
+	Medicationhistroy = models.CharField(max_length=120,null=True,blank=True)
 	Alcohol = models.BooleanField(default=False,blank=True)
 	Smoking = models.BooleanField(default=False,blank=True)
 	Bowel = models.BooleanField(default=False,blank=True)
