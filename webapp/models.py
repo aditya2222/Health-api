@@ -1,8 +1,6 @@
 from django.db import models
 from django.utils.crypto import get_random_string
-from mongoengine import *
 
-connect('appDB')
 
 
 # Create your models here.
