@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp',
     'rest_framework',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -124,4 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'thankyou'
+
+import django_heroku
+django_heroku.settings(locals())
 

@@ -174,6 +174,8 @@ class formModel(models.Model):
     # models of Lower Limb
     toneleft1 = models.CharField(max_length=120, null=True)
     toneright1 = models.CharField(max_length=120, null=True)
+    BulkLeft = models.CharField(max_length=120)
+    BulkRight = models.CharField(max_length=120)
     # models of Hip
     abductionleft1 = models.CharField(max_length=120, null=True)
     abductionright1 = models.CharField(max_length=120, null=True)
@@ -257,12 +259,9 @@ class formModel(models.Model):
     othersLeft = models.CharField(max_length=120, null=True)
     othersRight = models.CharField(max_length=120, null=True)
     # models for other systems
-    CVSleft = models.CharField(max_length=120, null=True)
-    CVSright = models.CharField(max_length=120, null=True)
-    AbdomenLeft = models.CharField(max_length=120, null=True)
-    AbdomenRight = models.CharField(max_length=120, null=True)
-    respiratorSystemleft = models.CharField(max_length=120, null=True)
-    respiratorSystemright = models.CharField(max_length=120, null=True)
+    CVS = models.CharField(max_length=120)
+    Abdomen = models.CharField(max_length=120)
+    RespiratorySystem = models.CharField(max_length=120)
 
     def __str__(self):
         return self.Name
