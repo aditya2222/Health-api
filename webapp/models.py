@@ -83,13 +83,13 @@ class formModel(models.Model):
     DirectRight = models.CharField(max_length=120, null=True)
     ConsensualLeft = models.CharField(max_length=120, null=True)
     ConsensualRight = models.CharField(max_length=120, null=True)
-    nystagmusleft = models.CharField(max_length=120, null=True)
-    nystagmusright = models.CharField(max_length=120, null=True)
+    nystagmusleft12 = models.CharField(max_length=120, null=True)
+    nystagmusright12 = models.CharField(max_length=120, null=True)
     accomodationLeft = models.CharField(max_length=120, null=True)
     accomodationRight = models.CharField(max_length=120, null=True)
     # models of trigeminal
-    sensoryLeft = models.CharField(max_length=120, null=True)
-    sensoryRight = models.CharField(max_length=120, null=True)
+    sensoryLeft12 = models.CharField(max_length=120, null=True)
+    sensoryRight12 = models.CharField(max_length=120, null=True)
     motorLeft = models.CharField(max_length=120, null=True)
     motorRight = models.CharField(max_length=120, null=True)
     jawjerkleft = models.CharField(max_length=120, null=True)
@@ -157,10 +157,10 @@ class formModel(models.Model):
     extensionleft = models.CharField(max_length=120, null=True)
     extensionright = models.CharField(max_length=120, null=True)
     # models of Elbow
-    FlexionLeft = models.CharField(max_length=120, null=True)
-    FlexionRight = models.CharField(max_length=120, null=True)
-    ExtensionLeft = models.CharField(max_length=120, null=True)
-    ExtensionRight = models.CharField(max_length=120, null=True)
+    FlexionLeft12 = models.CharField(max_length=120, null=True)
+    FlexionRight12 = models.CharField(max_length=120, null=True)
+    ExtensionLeft12 = models.CharField(max_length=120, null=True)
+    ExtensionRight12 = models.CharField(max_length=120, null=True)
     # models of wrist
     flexionleft1 = models.CharField(max_length=120, null=True)
     flexionright1 = models.CharField(max_length=120, null=True)
@@ -172,8 +172,8 @@ class formModel(models.Model):
     # models of Lower Limb
     toneleft1 = models.CharField(max_length=120, null=True)
     toneright1 = models.CharField(max_length=120, null=True)
-    BulkLeft = models.CharField(max_length=120)
-    BulkRight = models.CharField(max_length=120)
+    BulkLeft12 = models.CharField(max_length=120)
+    BulkRight12 = models.CharField(max_length=120)
     # models of Hip
     abductionleft1 = models.CharField(max_length=120, null=True)
     abductionright1 = models.CharField(max_length=120, null=True)
