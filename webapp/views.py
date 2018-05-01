@@ -31,7 +31,8 @@ class CreatePatientForm(LoginRequiredMixin,CreateView):
 	form_class = myForm
 	success_url = 'webapp/stepOneModel_list.html'
 
-class PatientsList(ListView):
+class PatientsList(LoginRequiredMixin,ListView):
+	login_url='/login/'
 	model = formModel
 	paginate_by = 50
 
