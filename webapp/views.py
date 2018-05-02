@@ -42,3 +42,4 @@ class PatientsList(LoginRequiredMixin,ListView):
 
 class ThankYouPage(TemplateView):
 	template_name = 'webapp/thankyou.html'
+
