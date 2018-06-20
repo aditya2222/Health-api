@@ -22,7 +22,7 @@ urlpatterns = [
 	path('',include('webapp.urls')),
     path('admin/', admin.site.urls),
     path('employees/', views.empList.as_view(),name='employees'),
-    path('login/',auth_views.LoginView.as_view(),name='login'),
+    path('login/',auth_views.LoginView.as_view(),name='login',kwargs={'redirect_authenticated_user': True}),
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
     path('thankyou/',views.ThankYouPage.as_view(),name='thankyou'),
 ]

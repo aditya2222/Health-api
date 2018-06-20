@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:3.6.5
+    container_name: "mongo"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - .data-volume:/data/db
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    container_name: kurehealthmvp
+    volumes:
+      - .:/webapp
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+  

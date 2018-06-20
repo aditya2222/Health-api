@@ -55,7 +55,7 @@ var FormWidgets = function () {
 
         // select2
         $('#m_select2').select2({
-            placeholder: "Select a state",
+            placeholder: "    ",
         });
         $('#m_select2').on('select2:change', function(){
             validator.element($(this)); // validate element

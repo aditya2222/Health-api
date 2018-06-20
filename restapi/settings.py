@@ -70,6 +70,12 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
 WSGI_APPLICATION = 'restapi.wsgi.application'
 
 
@@ -80,7 +86,7 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'my-db',
+        'NAME': 'my-db',    
     }
 }
 # Password validation
@@ -121,6 +127,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'thankyou'
+LOGOUT_REDIRECT_URL = '/login/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'staticfiles/')]
