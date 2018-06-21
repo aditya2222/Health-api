@@ -4,13 +4,15 @@
 <html lang="en" style="width:100%;overflow-x:hidden">
 <!-- begin::Head -->
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8"/>
 	<title>
 		Kure: KMC Neuro History Sheet
 	</title>
 
 	<style>
-	body {font-family: Arial, Helvetica, sans-serif;}
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
 
 	/* The Modal (background) */
 	.modal {
@@ -23,8 +25,8 @@
 		width: 100%; /* Full width */
 		height: 100%; /* Full height */
 		overflow: auto; /* Enable scroll if needed */
-		background-color: rgb(0,0,0); /* Fallback color */
-		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		background-color: rgb(0, 0, 0); /* Fallback color */
+		background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 	}
 
 	/* Modal Content */
@@ -57,596 +59,603 @@
 	src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
 	<!--bootstrap cdn -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	crossorigin="anonymous"></script>
 
-	<script src="{% static "assets/app/js/util.js" %}"> </script>
+	<script src="{% static "assets/app/js/util.js" %}"></script>
 	<meta name="description" content="Initialized with local json data">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
 
 
-
 	<!--begin::Web font -->
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-	<script src="{% static "assets/app/js/datatable.js" %}"> </script>
+	<script src="{% static "assets/app/js/datatable.js" %}"></script>
 	<script>
 	WebFont.load({
-		google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
-		active: function() {
+		google: {"families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]},
+		active: function () {
 			sessionStorage.fonts = true;
 		}
 	});
 
 
+        // var options = {
+        // 	data: {
+        //         type: 'remote',
+        //         source: {
+        //             read: {
+        //                 url: '/getpatients',
+        //                 method: 'GET',
+        //                 // custom headers
+        //                 headers: { 'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
+        //                 params: {
+        //                     // custom parameters
+        //                     //generalSearch: '',
+        //                     //EmployeeID: 1,
+        //                     //someParam: 'someValue',
+        //                     //token: 'token-value'
+        //                 },
+        //                 map: function(raw) {
+        //                     // sample data mapping
+        //                     var dataSet = raw;
+        //                     if (typeof raw.data !== 'undefined') {
+        //                          dataSet = raw.data;
+        //                     }
+        //                     return dataSet;
+        //                 },
+        //             }
+        //         },
+        //         pageSize: 10,
+        //         saveState: {
+        //             cookie: true,
+        //             webstorage: true
+        //         },
+
+        //         serverPaging: true,
+        //         serverFiltering: true,
+        //         serverSorting: true,
+        //         autoColumns: true,
+        //     },
+
+        //     layout: {
+        //         theme: 'default',
+        //         class: 'm-datatable--brand',
+        //         scroll: false,
+        //         height: null,
+        //         footer: false,
+        //         header: true,
+
+        //         smoothScroll: {
+        //             scrollbarShown: true
+        //         },
+
+        //         spinner: {
+        //             overlayColor: '#000000',
+        //             opacity: 0,
+        //             type: 'loader',
+        //             state: 'brand',
+        //             message: true
+        //         },
+
+        //         icons: {
+        //             sort: {asc: 'la la-arrow-up', desc: 'la la-arrow-down'},
+        //             pagination: {
+        //                 next: 'la la-angle-right',
+        //                 prev: 'la la-angle-left',
+        //                 first: 'la la-angle-double-left',
+        //                 last: 'la la-angle-double-right',
+        //                 more: 'la la-ellipsis-h'
+        //             },
+        //         }
+        //     },
+
+        //     sortable: true,
+
+        //     pagination: true,
+
+        //     search: {
+        //       // enable trigger search by keyup enter
+        //       onEnter: false,
+        //       // input text for search
+        // 	  input: $('#generalSearch'),
+        //       // search delay in milliseconds
+        //       delay: 400,
+        //     },
+        // /*
+        //     detail: {
+        //         title: 'Load sub table',
+        //         content: function (e) {
+        //             // e.data
+        //             // e.detailCell
+        //         }
+        //     },*/
+
+        //     rows: {
+        //       callback: function() {},
+        //       // auto hide columns, if rows overflow. work on non locked columns
+        //       autoHide: true,
+        //     },
+
+        //     // columns definition
+        // 	columns:  [
+        // 	{
+        //           field: 'Kureid',
+        // 		  title: 'KureID',
+        // 		  width:200,
+        // 	 },{
+        //           field: 'OpNo',
+        // 		  title: 'Hospital Number',
+        // 		  width:200,
+        //      },
+        //         {
+        //           field: 'Name',
+        //           title: 'Name',
+        //          // sortable: false, // disable sort for this column
+        //           //width: 200,
+        // 		 // selector: false,
+        //          // textAlign: 'center',
+        //         }, {
+        //           field: 'Age',
+        //           title: 'Age',
+        //           // sortable: 'asc', // default sort
+        //           width: 100,
+        //           // basic templating support for column rendering,
+        //         }, {
+        //           field: 'genderChoice',
+        // 		  title: 'Sex',
+        // 		  width:100,
+        //      },
+
+        // 	  /*{
+        //           field: 'Actions',
+        //          // width: 300,
+        //           title: 'Actions',
+        //           sortable: false,
+        //           template: function (row, index, datatable) {
+        //             var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
+        //             return '\
+        // 						\
+        // 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-warning m-btn--icon m-btn--icon-only m-btn--pill" title="Export as PDF">\
+        // 							<i class="la la-external-link"></i>\
+        // 						</a>\
+        // 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
+        // 							<i class="la la-edit"></i>\
+        // 						</a>\
+        // 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="Delete">\
+        // 							<i class="la la-trash"></i>\
+        // 						</a>\
+        // 					';
+        //           },
+        //         }*/],
+
+        //     toolbar: {
+        //         layout: ['pagination', 'info'],
+
+        //         placement: ['bottom'],  //'top', 'bottom'
+
+        //         items: {
+        //             pagination: {
+        //                 type: 'default',
+
+        //                 pages: {
+        //                     desktop: {
+        //                         layout: 'default',
+        //                         pagesNumber: 6
+        //                     },
+        //                     tablet: {
+        //                         layout: 'default',
+        //                         pagesNumber: 3
+        //                     },
+        //                     mobile: {
+        //                         layout: 'compact'
+        //                     }
+        //                 },
+
+        //                 navigation: {
+        //                     prev: true,
+        //                     next: true,
+        //                     first: true,
+        //                     last: true
+        //                 },
+
+        //                 pageSizeSelect: [10, 20, 30, 50, 100]
+        //             },
+
+        //             info: true
+        //         }
+        //     },
 
 
-// var options = {
-// 	data: {
-//         type: 'remote',
-//         source: {
-//             read: {
-//                 url: '/getpatients',
-//                 method: 'GET',
-//                 // custom headers
-//                 headers: { 'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
-//                 params: {
-//                     // custom parameters
-//                     //generalSearch: '',
-//                     //EmployeeID: 1,
-//                     //someParam: 'someValue',
-//                     //token: 'token-value'
-//                 },
-//                 map: function(raw) {
-//                     // sample data mapping
-//                     var dataSet = raw;
-//                     if (typeof raw.data !== 'undefined') {
-//                          dataSet = raw.data;
-//                     }
-//                     return dataSet;
-//                 },
-//             }
-//         },
-//         pageSize: 10,
-//         saveState: {
-//             cookie: true,
-//             webstorage: true
-//         },
-
-//         serverPaging: true,
-//         serverFiltering: true,
-//         serverSorting: true,
-//         autoColumns: true,
-//     },
-
-//     layout: {
-//         theme: 'default',
-//         class: 'm-datatable--brand',
-//         scroll: false,
-//         height: null,
-//         footer: false,
-//         header: true,
-
-//         smoothScroll: {
-//             scrollbarShown: true
-//         },
-
-//         spinner: {
-//             overlayColor: '#000000',
-//             opacity: 0,
-//             type: 'loader',
-//             state: 'brand',
-//             message: true
-//         },
-
-//         icons: {
-//             sort: {asc: 'la la-arrow-up', desc: 'la la-arrow-down'},
-//             pagination: {
-//                 next: 'la la-angle-right',
-//                 prev: 'la la-angle-left',
-//                 first: 'la la-angle-double-left',
-//                 last: 'la la-angle-double-right',
-//                 more: 'la la-ellipsis-h'
-//             },
-//         }
-//     },
-
-//     sortable: true,
-
-//     pagination: true,
-
-//     search: {
-//       // enable trigger search by keyup enter
-//       onEnter: false,
-//       // input text for search
-// 	  input: $('#generalSearch'),
-//       // search delay in milliseconds
-//       delay: 400,
-//     },
-// /*
-//     detail: {
-//         title: 'Load sub table',
-//         content: function (e) {
-//             // e.data
-//             // e.detailCell
-//         }
-//     },*/
-
-//     rows: {
-//       callback: function() {},
-//       // auto hide columns, if rows overflow. work on non locked columns
-//       autoHide: true,
-//     },
-
-//     // columns definition
-// 	columns:  [
-// 	{
-//           field: 'Kureid',
-// 		  title: 'KureID',
-// 		  width:200,
-// 	 },{
-//           field: 'OpNo',
-// 		  title: 'Hospital Number',
-// 		  width:200,
-//      },
-//         {
-//           field: 'Name',
-//           title: 'Name',
-//          // sortable: false, // disable sort for this column
-//           //width: 200,
-// 		 // selector: false,
-//          // textAlign: 'center',
-//         }, {
-//           field: 'Age',
-//           title: 'Age',
-//           // sortable: 'asc', // default sort
-//           width: 100,
-//           // basic templating support for column rendering,
-//         }, {
-//           field: 'genderChoice',
-// 		  title: 'Sex',
-// 		  width:100,
-//      },
-
-// 	  /*{
-//           field: 'Actions',
-//          // width: 300,
-//           title: 'Actions',
-//           sortable: false,
-//           template: function (row, index, datatable) {
-//             var dropup = (datatable.getPageSize() - index) <= 4 ? 'dropup' : '';
-//             return '\
-// 						\
-// 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-warning m-btn--icon m-btn--icon-only m-btn--pill" title="Export as PDF">\
-// 							<i class="la la-external-link"></i>\
-// 						</a>\
-// 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-accent m-btn--icon m-btn--icon-only m-btn--pill" title="Edit details">\
-// 							<i class="la la-edit"></i>\
-// 						</a>\
-// 						<a href="#" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" title="Delete">\
-// 							<i class="la la-trash"></i>\
-// 						</a>\
-// 					';
-//           },
-//         }*/],
-
-//     toolbar: {
-//         layout: ['pagination', 'info'],
-
-//         placement: ['bottom'],  //'top', 'bottom'
-
-//         items: {
-//             pagination: {
-//                 type: 'default',
-
-//                 pages: {
-//                     desktop: {
-//                         layout: 'default',
-//                         pagesNumber: 6
-//                     },
-//                     tablet: {
-//                         layout: 'default',
-//                         pagesNumber: 3
-//                     },
-//                     mobile: {
-//                         layout: 'compact'
-//                     }
-//                 },
-
-//                 navigation: {
-//                     prev: true,
-//                     next: true,
-//                     first: true,
-//                     last: true
-//                 },
-
-//                 pageSizeSelect: [10, 20, 30, 50, 100]
-//             },
-
-//             info: true
-	//         }
-	//     },
+        // };
 
 
-// };
+        //var datatable = $(".m_datatable").mDatatable(options);
 
 
+        </script>
+        <!--end::Web font -->
+        <!--begin::Base Styles -->
+        <link href="{% static 'assets/vendors/base/vendors.bundle.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'assets/demo/default/base/style.bundle.css' %}" rel="stylesheet" type="text/css"/>
+        <!--end::Base Styles -->
 
+        <link rel="shortcut icon" type='image/x-icon' href="/static/assets/app/media/img/icons/favicon.ico"/>
+    </head>
+    <!-- end::Head -->
+    <!-- end::Body -->
+    <body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    	<!-- begin:: Page -->
+    	<div class="m-grid m-grid--hor m-grid--root m-page">
+    		<!-- BEGIN: Header -->
+    		<header class="m-grid__item    m-header " data-minimize-offset="200" data-minimize-mobile-offset="200">
+    			<div class="m-container m-container--fluid m-container--full-height">
+    				<div class="m-stack m-stack--ver m-stack--desktop">
+    					<!-- BEGIN: Brand -->
+    					<div class="m-stack__item m-brand  m-brand--skin-dark ">
+    						<div class="m-stack m-stack--ver m-stack--general">
+    							<div class="m-stack__item m-stack__item--middle m-brand__logo">
+    								<a href="../../../index.html" class="m-brand__logo-wrapper">
+    									<img alt="" src="../../../assets/demo/default/media/img/logo/logo_default_dark.png"/>
+    								</a>
+    							</div>
+    							<div class="m-stack__item m-stack__item--middle m-brand__tools">
+    								<!-- BEGIN: Left Aside Minimize Toggle -->
+    								<a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block
+    								">
+    								<span></span>
+    							</a>
+    							<!-- END -->
+    							<!-- BEGIN: Responsive Aside Left Menu Toggler -->
+    							<a href="javascript:;" id="m_aside_left_offcanvas_toggle"
+    							class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+    							<span></span>
+    						</a>
+    						<!-- END -->
+    						<!-- BEGIN: Responsive Header Menu Toggler -->
+    						<a id="m_aside_header_menu_mobile_toggle" href="javascript:;"
+    						class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+    						<span></span>
+    					</a>
+    					<!-- END -->
+    					<!-- BEGIN: Topbar Toggler -->
+    					<a id="m_aside_header_topbar_mobile_toggle" href="javascript:;"
+    					class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+    					<i class="flaticon-more"></i>
+    				</a>
+    				<!-- BEGIN: Topbar Toggler -->
+    			</div>
+    		</div>
+    	</div>
+    	<!-- END: Brand -->
+    	<div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+    		<!-- BEGIN: Horizontal Menu -->
 
-	//var datatable = $(".m_datatable").mDatatable(options);
+    		<!-- END: Horizontal Menu -->                                <!-- BEGIN: Topbar -->
+    		<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+    			<div class="m-stack__item m-topbar__nav-wrapper" style="vertical-align: middle">
+    				<ul class="m-topbar__nav m-nav m-nav--inline" style="height:auto">
+    					<li class="m-nav__item">
+    						<a href="{% url 'logout' %}"
+    						class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
+    					</li>
+    				</ul>
+    			</div>
+    		</div>
+    		<!-- END: Topbar -->
+    	</div>
+    </div>
+</div>
+</header>
+<!-- END: Header -->
+<!-- begin::Body -->
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+	<!-- BEGIN: Left Aside -->
+	<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
+		<i class="la la-close"></i>
+	</button>
+	<div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark ">
+		<!-- BEGIN: Aside Menu -->
+		<div
+		id="m_ver_menu"
+		class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark "
+		data-menu-vertical="true"
+		data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+		<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+			<li class="m-menu__item " aria-haspopup="true">
+				<a href="{% url 'dashboard' %}" class="m-menu__link ">
+					<i class="m-menu__link-icon flaticon-line-graph"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text">
+								Dashboard
+							</span>
+							<span class="m-menu__link-badge">
 
-
-
-	</script>
-	<!--end::Web font -->
-	<!--begin::Base Styles -->
-	<link href="{% static 'assets/vendors/base/vendors.bundle.css' %}" rel="stylesheet" type="text/css" />
-	<link href="{% static 'assets/demo/default/base/style.bundle.css' %}" rel="stylesheet" type="text/css" />
-	<!--end::Base Styles -->
-
-	<link rel="shortcut icon" type='image/x-icon' href="/static/assets/app/media/img/icons/favicon.ico"/>
-</head>
-<!-- end::Head -->
-<!-- end::Body -->
-<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
-	<!-- begin:: Page -->
-	<div class="m-grid m-grid--hor m-grid--root m-page">
-		<!-- BEGIN: Header -->
-		<header class="m-grid__item    m-header "  data-minimize-offset="200" data-minimize-mobile-offset="200" >
-			<div class="m-container m-container--fluid m-container--full-height">
-				<div class="m-stack m-stack--ver m-stack--desktop">
-					<!-- BEGIN: Brand -->
-					<div class="m-stack__item m-brand  m-brand--skin-dark ">
-						<div class="m-stack m-stack--ver m-stack--general">
-							<div class="m-stack__item m-stack__item--middle m-brand__logo">
-								<a href="../../../index.html" class="m-brand__logo-wrapper">
-									<img alt="" src="../../../assets/demo/default/media/img/logo/logo_default_dark.png"/>
-								</a>
-							</div>
-							<div class="m-stack__item m-stack__item--middle m-brand__tools">
-								<!-- BEGIN: Left Aside Minimize Toggle -->
-								<a href="javascript:;" id="m_aside_left_minimize_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-desktop-inline-block 
-								">
-								<span></span>
-							</a>
-							<!-- END -->
-							<!-- BEGIN: Responsive Aside Left Menu Toggler -->
-							<a href="javascript:;" id="m_aside_left_offcanvas_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
-								<span></span>
-							</a>
-							<!-- END -->
-							<!-- BEGIN: Responsive Header Menu Toggler -->
-							<a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
-								<span></span>
-							</a>
-							<!-- END -->
-							<!-- BEGIN: Topbar Toggler -->
-							<a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
-								<i class="flaticon-more"></i>
-							</a>
-							<!-- BEGIN: Topbar Toggler -->
-						</div>
-					</div>
-				</div>
-				<!-- END: Brand -->
-				<div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
-					<!-- BEGIN: Horizontal Menu -->
-
-					<!-- END: Horizontal Menu -->								<!-- BEGIN: Topbar -->
-					<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
-						<div class="m-stack__item m-topbar__nav-wrapper" style="vertical-align: middle">
-							<ul class="m-topbar__nav m-nav m-nav--inline" style="height:auto">
-								<li class="m-nav__item">
-									<a href="{% url 'logout' %}" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- END: Topbar -->
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- END: Header -->		
-	<!-- begin::Body -->
-	<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
-		<!-- BEGIN: Left Aside -->
-		<button class="m-aside-left-close  m-aside-left-close--skin-dark " id="m_aside_left_close_btn">
-			<i class="la la-close"></i>
-		</button>
-		<div id="m_aside_left" class="m-grid__item	m-aside-left  m-aside-left--skin-dark ">
-			<!-- BEGIN: Aside Menu -->
-			<div 
-			id="m_ver_menu" 
-			class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " 
-			data-menu-vertical="true"
-			data-menu-scrollable="false" data-menu-dropdown-timeout="500"  >
-			<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
-				<li class="m-menu__item " aria-haspopup="true" >
-					<a  href="{% url 'dashboard' %}" class="m-menu__link ">
-						<i class="m-menu__link-icon flaticon-line-graph"></i>
-						<span class="m-menu__link-title">
-							<span class="m-menu__link-wrap">
-								<span class="m-menu__link-text">
-									Dashboard
-								</span>
-								<span class="m-menu__link-badge">
-
-								</span>
 							</span>
 						</span>
-					</a>
-				</li>
-				<li class="m-menu__item " aria-haspopup="true" >
-					<a  href=".{% url 'createpatient' %}" class="m-menu__link ">
-						<i class="m-menu__link-icon flaticon-line-graph"></i>
-						<span class="m-menu__link-title">
-							<span class="m-menu__link-wrap">
-								<span class="m-menu__link-text">
-									Create Patient
-								</span>
-								<span class="m-menu__link-badge">
+					</span>
+				</a>
+			</li>
+			<li class="m-menu__item " aria-haspopup="true">
+				<a href=".{% url 'createpatient' %}" class="m-menu__link ">
+					<i class="m-menu__link-icon flaticon-line-graph"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text">
+								Create Patient
+							</span>
+							<span class="m-menu__link-badge">
 
-								</span>
 							</span>
 						</span>
-					</a>
-				</li>
+					</span>
+				</a>
+			</li>
 
 
+			<!-- this is the starting -->
 
-				<!-- this is the starting -->
+		</ul>
 
-			</ul>
-
-		</div>
-		<!-- END: Aside Menu -->
 	</div>
-	<!-- END: Left Aside -->
+	<!-- END: Aside Menu -->
+</div>
+<!-- END: Left Aside -->
 
-	<!-- END: Subheader -->
-	<div class="m-content">
+<!-- END: Subheader -->
+<div class="m-content">
 
 
-		<div class="m-portlet m-portlet--mobile">
-			<div class="m-portlet__head">
-				<div class="m-portlet__head-caption">
-					<div class="m-portlet__head-title">
-						<h3 class="m-portlet__head-text">
-							List of Patients	
-						</h3>
-					</div>
+	<div class="m-portlet m-portlet--mobile">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-caption">
+				<div class="m-portlet__head-title">
+					<h3 class="m-portlet__head-text">
+						List of Patients
+					</h3>
 				</div>
-
 			</div>
-			<div class="m-portlet__body">
-				<!--begin: Search Form -->
-				<div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
-					<div class="row align-items-center">
-						<div class="col-xl-8 order-2 order-xl-1">
-							<div class="form-group m-form__group row align-items-center">
-								<div class="col-md-4">
-									<div class="m-form__group m-form__group--inline">
-										<div class="m-form__label">
-											<label>
-												Status:
-											</label>
-										</div>
-										<div class="m-form__control">
-											<select class="form-control m-bootstrap-select" id="m_form_status">
-												<option value="">
-													All
-												</option>
-												<option value="1">
-													Pending
-												</option>
-												<option value="2">
-													Delivered
-												</option>
-												<option value="3">
-													Canceled
-												</option>
-											</select>
-										</div>
-									</div>
-									<div class="d-md-none m--margin-bottom-10"></div>
-								</div>
-								<div class="col-md-4">
-									<div class="m-form__group m-form__group--inline">
-										<div class="m-form__label">
-											<label class="m-label m-label--single">
-												Type:
-											</label>
-										</div>
-										<div class="m-form__control">
-											<select class="form-control m-bootstrap-select" id="m_form_type">
-												<option value="">
-													All
-												</option>
-												<option value="1">
-													Online
-												</option>
-												<option value="2">
-													Retail
-												</option>
-												<option value="3">
-													Direct
-												</option>
-											</select>
-										</div>
-									</div>
-									<div class="d-md-none m--margin-bottom-10"></div>
-								</div>
-								<div class="col-md-4">
-									<div class="m-input-icon m-input-icon--left">
-										<input type="text" class="form-control m-input" placeholder="Search..." id="generalSearch">
-										<span class="m-input-icon__icon m-input-icon__icon--left">
-											<span>
-												<i class="la la-search"></i>
-											</span>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 order-1 order-xl-2 m--align-right">
-							<a href="/createpatient" class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
-								<span>
-									<span>
-										Add a New Patient
-									</span>
-								</span>
-							</a>
-							<div class="m-separator m-separator--dashed d-xl-none"></div>
-						</div>
-					</div>
 
-				</div>
-
-
-				<!--		<div class="m_datatable" id="ajax_data"> -->
-
-					<!-- Custom Table -->
-
-
-					<div class="container">
-
-						<table id="example" class="display" style="width:100%">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Age</th>
-									<th>Gender Choice</th>
-									<th>Kure ID</th>
-									<th>Status</th>
-								</tr>
-							</thead>
-							<tfoot>
-								<tr>
-									<th>Name</th>
-									<th>Age</th>
-									<th>Gender Choice</th>
-									<th>Kure ID</th>
-									<th>Status</th>
-								</tr>
-							</tfoot>
-						</table>
-
-						<!-- Modal -->
-						
-							<h2>Modal Example</h2>
-							<!-- Trigger the modal with a button -->
-						<!--	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-
-							<!-- Modal -->
-							<div class="modal fade" id="myModal" role="dialog">
-								<div class="modal-dialog">
-
-									<!-- Modal content-->
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">Patient Record</h4>
-										</div>
-										<div class="modal-body">
-											<p id="patientData"></p>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-						
-
-					</div>
-
-
-				</div></div></div>
-
-
-
-			</div>
 		</div>
-		<!-- end:: Body -->
-		<!-- begin::Footer -->
-			<!-- 			<footer class="m-grid__item		m-footer ">
-	   <div class="m-container m-container--fluid m-container--full-height m-page__container">
-	   <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
-	   <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
-	   <span class="m-footer__copyright">
-	   2018 &copy; 
-	   <a href="#" class="m-link">
-	   Kure Healthcare
-	   </a>
-	   </span>
-	   </div>
-	   <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
-	   <ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
-	   <li class="m-nav__item">
-	   <a href="#" class="m-nav__link">
-	   <span class="m-nav__link-text">
-	   About
-	   </span>
-	   </a>
-	   </li>
-	   <li class="m-nav__item">
-	   <a href="#"  class="m-nav__link">
-	   <span class="m-nav__link-text">
-	   Privacy
-	   </span>
-	   </a>
-	   </li>
-	   <li class="m-nav__item">
-	   <a href="#" class="m-nav__link">
-	   <span class="m-nav__link-text">
-	   T&C
-	   </span>
-	   </a>
-	   </li>
-	   <li class="m-nav__item">
-	   <a href="#" class="m-nav__link">
-	   <span class="m-nav__link-text">
-	   Purchase
-	   </span>
-	   </a>
-	   </li>
-	   <li class="m-nav__item m-nav__item">
-	   <a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
-	   <i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
-	   </a>
-	   </li>
-	   </ul>
-	   </div>
-	   </div>
-	   </div>
-	</footer> -->
-	<!-- end::Footer -->
+		<div class="m-portlet__body">
+			<!--begin: Search Form -->
+			<div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+				<div class="row align-items-center">
+					<div class="col-xl-8 order-2 order-xl-1">
+						<div class="form-group m-form__group row align-items-center">
+							<div class="col-md-4">
+								<div class="m-form__group m-form__group--inline">
+									<div class="m-form__label">
+										<label>
+											Status:
+										</label>
+									</div>
+									<div class="m-form__control">
+										<select class="form-control m-bootstrap-select" id="m_form_status">
+											<option value="">
+												All
+											</option>
+											<option value="1">
+												Pending
+											</option>
+											<option value="2">
+												Delivered
+											</option>
+											<option value="3">
+												Canceled
+											</option>
+										</select>
+									</div>
+								</div>
+								<div class="d-md-none m--margin-bottom-10"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="m-form__group m-form__group--inline">
+									<div class="m-form__label">
+										<label class="m-label m-label--single">
+											Type:
+										</label>
+									</div>
+									<div class="m-form__control">
+										<select class="form-control m-bootstrap-select" id="m_form_type">
+											<option value="">
+												All
+											</option>
+											<option value="1">
+												Online
+											</option>
+											<option value="2">
+												Retail
+											</option>
+											<option value="3">
+												Direct
+											</option>
+										</select>
+									</div>
+								</div>
+								<div class="d-md-none m--margin-bottom-10"></div>
+							</div>
+							<div class="col-md-4">
+								<div class="m-input-icon m-input-icon--left">
+									<input type="text" class="form-control m-input" placeholder="Search..."
+									id="generalSearch">
+									<span class="m-input-icon__icon m-input-icon__icon--left">
+										<span>
+											<i class="la la-search"></i>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 order-1 order-xl-2 m--align-right">
+						<a href="/createpatient"
+						class="btn btn-primary m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
+						<span>
+							<span>
+								Add a New Patient
+							</span>
+						</span>
+					</a>
+					<div class="m-separator m-separator--dashed d-xl-none"></div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!--		<div class="m_datatable" id="ajax_data"> -->
+
+			<!-- Custom Table -->
+
+
+			<div class="container">
+
+				<table id="example" class="display" style="width:100%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Gender Choice</th>
+							<th>Kure ID</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Gender Choice</th>
+							<th>Kure ID</th>
+							<th>Status</th>
+						</tr>
+					</tfoot>
+				</table>
+
+				<!-- Modal -->
+
+				<h2>Modal Example</h2>
+				<!-- Trigger the modal with a button -->
+				<!--	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Patient Record</h4>
+							</div>
+							<div class="modal-body">
+								<p id="patientData"></p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close
+								</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+</div>
+</div>
+<!-- end:: Body -->
+<!-- begin::Footer -->
+<!-- 			<footer class="m-grid__item		m-footer ">
+<div class="m-container m-container--fluid m-container--full-height m-page__container">
+<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+<span class="m-footer__copyright">
+2018 &copy;
+<a href="#" class="m-link">
+Kure Healthcare
+</a>
+</span>
+</div>
+<div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+<ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
+<li class="m-nav__item">
+<a href="#" class="m-nav__link">
+<span class="m-nav__link-text">
+About
+</span>
+</a>
+</li>
+<li class="m-nav__item">
+<a href="#"  class="m-nav__link">
+<span class="m-nav__link-text">
+Privacy
+</span>
+</a>
+</li>
+<li class="m-nav__item">
+<a href="#" class="m-nav__link">
+<span class="m-nav__link-text">
+T&C
+</span>
+</a>
+</li>
+<li class="m-nav__item">
+<a href="#" class="m-nav__link">
+<span class="m-nav__link-text">
+Purchase
+</span>
+</a>
+</li>
+<li class="m-nav__item m-nav__item">
+<a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
+<i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer> -->
+<!-- end::Footer -->
 </div>
 <!-- end:: Page -->
 <!-- begin::Quick Sidebar -->
 
-<!-- end::Quick Sidebar -->		    
+<!-- end::Quick Sidebar -->
 <!-- begin::Scroll Top -->
-<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
-	<i class="la la-arrow-up"></i>
+<div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500"
+data-scroll-speed="300">
+<i class="la la-arrow-up"></i>
 </div>
-<!-- end::Scroll Top -->		    <!-- begin::Quick Nav -->
+<!-- end::Scroll Top -->            <!-- begin::Quick Nav -->
 
-<!-- begin::Quick Nav -->	
+<!-- begin::Quick Nav -->
 <!--begin::Base Scripts -->
 <script src="{% static 'assets/vendors/base/vendors.bundle.js' %}" type="text/javascript"></script>
 <script src="{% static 'assets/demo/default/base/scripts.bundle.js' %}" type="text/javascript"></script>
-<!--end::Base Scripts -->   
+<!--end::Base Scripts -->
 <!--begin::Page Resources -->
-<script src="{%  static 'assets/demo/default/custom/components/datatables/base/data-json.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/demo/default/custom/components/datatables/base/data-json.js' %}"
+type="text/javascript"></script>
 alert('This is an alert')
 <!--end::Page Resources -->
 </body>
@@ -660,89 +669,86 @@ alert('This is an alert')
 
 <script>
 
-$(document).ready(function() {
-	var table = $('#example').DataTable( {
+$(document).ready(function () {
+	var table = $('#example').DataTable({
 		"ajax": {
 			"url": "http://127.0.0.1:8000/getpatients/",
 			"dataSrc": "",
 
 		},
 		"columns": [
-		{ "data": "Name" },
-		{ "data": "Age" },
-		{ "data": "genderChoice" },
-		{ "data": "Kureid" },
-		{"defaultContent":"<button type='button' class='btn btn-primary'>View</button>"}
+		{"data": "Name"},
+		{"data": "Age"},
+		{"data": "genderChoice"},
+		{"data": "Kureid"},
+		{"defaultContent": "<button type='button' class='btn btn-primary'>View</button>"}
 
 		],
 
 
+	});
+	$('#example tbody').on('click', 'button', function () {
+		var data = table.row($(this).parents('tr')).data();
+		var Name = data.Name;
+		var Age = data.Age;
+		var Gender = data.genderChoice;
+		var Opno = data.Opno;
+		var Ipno = data.Ipno;
+		var Kureid = data.Kureid;
+		var Phoneno = data.Phoneno;
+		var Address = data.Address;
+
+		var ChiefComplaints = data.ChiefComplaints;
+		var Historyofillness = data.Historyofillness;
+		var PastHistory = data.PastHistory;
+		var Medicationhistroy = data.Medicationhistroy;
+		var Alcohol = data.Alcohol;
+		var Smoking = data.Smoking;
+		var Bowel = data.Bowel;
+		var Bladder = data.Bladder;
+		var Sleep = data.Sleep;
+		var Summary = data.Summary;
+		var ProvisionalDiagnosis = data.ProvisionalDiagnosis;
+		var Examinedby = data.Examinedby;
+		var Verifiedby = data.Verifiedby;
 
 
-	} );
-	$('#example tbody').on( 'click', 'button', function () {
-		var data = table.row( $(this).parents('tr') ).data();
-		 var Name = data.Name;
-		 var Age = data.Age;
-		 var Gender = data.genderChoice;
-		 var Opno = data.Opno;
-		 var Ipno = data.Ipno;
-		 var Kureid = data.Kureid;
-		 var Phoneno = data.Phoneno;
-		 var Address = data.Address;
-		
-		 var ChiefComplaints = data.ChiefComplaints;
-		 var Historyofillness = data.Historyofillness;
-		 var PastHistory = data.PastHistory;
-		 var Medicationhistroy = data.Medicationhistroy;
-		 var Alcohol = data.Alcohol;
-		 var Smoking = data.Smoking;
-		 var Bowel = data.Bowel;
-		 var Bladder = data.Bladder;
-		 var Sleep = data.Sleep;
-		 var Summary = data.Summary;
-		 var ProvisionalDiagnosis = data.ProvisionalDiagnosis;
-		 var Examinedby = data.Examinedby;
-		 var Verifiedby = data.Verifiedby;
-		 
-
-   localStorage.setItem("Name",Name);
-   localStorage.setItem("Age",Age);
-   localStorage.setItem("Gender",Gender);
-   localStorage.setItem("Opno",Opno);
-   localStorage.setItem("Ipno",Ipno);
-   localStorage.setItem("Kureid",Kureid);
-   localStorage.setItem("Address",Address);
-   localStorage.setItem("Phoneno",Phoneno);
-   localStorage.setItem("ChiefComplaints",ChiefComplaints);
-   localStorage.setItem("Historyofillness",Historyofillness);
-   localStorage.setItem("PastHistory",PastHistory);
-   localStorage.setItem("Medicationhistroy",Medicationhistroy);
-   localStorage.setItem("Alcohol",Alcohol);
-   localStorage.setItem("Smoking",Smoking);
-   localStorage.setItem("Bowel",Bowel);
-   localStorage.setItem("Bladder",Bladder);
-   localStorage.setItem("Sleep",Sleep);
-   localStorage.setItem("Summary",Summary);
-   localStorage.setItem("ProvisionalDiagnosis",ProvisionalDiagnosis);
-   localStorage.setItem("Examinedby",Examinedby);
-   localStorage.setItem("Verifiedby",Verifiedby);
-
-   window.location.href = 'http://127.0.0.1:8000/createpatientautfill/'
-		// alert("Name of the patient: "+data.Name+"\n"+"Age of the patient: "+data.Age+"\n"+"Gender: "+data.genderChoice+"\n"+"Kureid: "+data.Kureid)
-/*		document.getElementById('patientData').innerHTML = "Name of the patient: "+data.Name+"<br>"+"Age of the patient: "+data.Age+"<br>"+"Gender: "+data.genderChoice+"<br>"+"Kureid: "+data.Kureid
-			+"<br>"+"Opno: "+data.Opno+"<br>"+"Ipno: "+data.Ipno+"<br>"+"Address: "+data.Address
-			+"<br>"+"Phoneno: "+data.Phoneno+"<br>"+"ChiefComplaints: "+data.ChiefComplaints+"<br>"+"Historyofillness: "+data.Historyofillness+"<br>"+"PastHistory: "+data.PastHistory+"<br>"+"FamilyHistory: "+data.FamilyHistory+"<br>"+"ProvisionalDiagnosis: "+data.ProvisionalDiagnosis+"<br>"+"Medicationhistroy: "+data.Medicationhistroy
-			+"<br>"+"Smoking: "+data.Smoking+"<br>"+"Bowel: "+data.Bowel
-			+"<br>"+"Bladder: "+data.Bladder+"<br>"+"Sleep: "+data.Sleep
-			+"<br>"+"Summary: "+data.Summary+"<br>"+"Examinedby: "+data.Examinedby
-			+"<br>"+"Verifiedby: "+data.Verifiedby
-		*/
+		localStorage.setItem("Name", Name);
+		localStorage.setItem("Age", Age);
+		localStorage.setItem("Gender", Gender);
+		localStorage.setItem("Opno", Opno);
+		localStorage.setItem("Ipno", Ipno);
+		localStorage.setItem("Kureid", Kureid);
+		localStorage.setItem("Address", Address);
+		localStorage.setItem("Phoneno", Phoneno);
+		localStorage.setItem("ChiefComplaints", ChiefComplaints);
+		localStorage.setItem("Historyofillness", Historyofillness);
+		localStorage.setItem("PastHistory", PastHistory);
+		localStorage.setItem("Medicationhistroy", Medicationhistroy);
+		localStorage.setItem("Alcohol", Alcohol);
+		localStorage.setItem("Smoking", Smoking);
+		localStorage.setItem("Bowel", Bowel);
+		localStorage.setItem("Bladder", Bladder);
+		localStorage.setItem("Sleep", Sleep);
+		localStorage.setItem("Summary", Summary);
+		localStorage.setItem("ProvisionalDiagnosis", ProvisionalDiagnosis);
+		localStorage.setItem("Examinedby", Examinedby);
+		localStorage.setItem("Verifiedby", Verifiedby);
 
 
+		window.location.href = 'http://127.0.0.1:8000/createpatientautfill/'
+            // alert("Name of the patient: "+data.Name+"\n"+"Age of the patient: "+data.Age+"\n"+"Gender: "+data.genderChoice+"\n"+"Kureid: "+data.Kureid)
+            /*		document.getElementById('patientData').innerHTML = "Name of the patient: "+data.Name+"<br>"+"Age of the patient: "+data.Age+"<br>"+"Gender: "+data.genderChoice+"<br>"+"Kureid: "+data.Kureid
+        +"<br>"+"Opno: "+data.Opno+"<br>"+"Ipno: "+data.Ipno+"<br>"+"Address: "+data.Address
+        +"<br>"+"Phoneno: "+data.Phoneno+"<br>"+"ChiefComplaints: "+data.ChiefComplaints+"<br>"+"Historyofillness: "+data.Historyofillness+"<br>"+"PastHistory: "+data.PastHistory+"<br>"+"FamilyHistory: "+data.FamilyHistory+"<br>"+"ProvisionalDiagnosis: "+data.ProvisionalDiagnosis+"<br>"+"Medicationhistroy: "+data.Medicationhistroy
+        +"<br>"+"Smoking: "+data.Smoking+"<br>"+"Bowel: "+data.Bowel
+        +"<br>"+"Bladder: "+data.Bladder+"<br>"+"Sleep: "+data.Sleep
+        +"<br>"+"Summary: "+data.Summary+"<br>"+"Examinedby: "+data.Examinedby
+        +"<br>"+"Verifiedby: "+data.Verifiedby
+        */
 
 
-	} );
+    });
 
 });
 
