@@ -497,7 +497,7 @@
                                                     </label>
                                                     <div class="col-xl-6 col-lg-6">
 
-                                                        <textarea class="form-control m-input" id="exampleTextarea" rows="3" name="Address"></textarea>
+                                                        <textarea class="form-control m-input" id="addressfield" rows="3" name="Address"></textarea>
                                                         
 
 
@@ -512,7 +512,7 @@
                                                         <span class="input-group-addon" id="basic-addon1">
                                                             +91
                                                         </span>
-                                                        <input type="text"
+                                                        <input type="text" id="Phoneno" name="Phoneno" 
                                                         class="form-control m-input col-lg-6"
                                                         maxlength="10" id="number3"
                                                         aria-describedby="basic-addon1">
@@ -562,7 +562,7 @@
                                                     <label class="form-control-label">
                                                         History Of Illness:
                                                     </label>
-                                                    <textarea name="Historyofillness"
+                                                    <textarea name="Historyofillness" id="history" 
                                                     class="form-control" rows="10"></textarea>
 
                                                 </div>
@@ -926,7 +926,7 @@
                                             <label class="form-control-label">
                                                 Medication History:
                                             </label>
-                                            <textarea name="Medicationhistroy"
+                                            <textarea name="Medicationhistroy" id="medication_history" 
                                             class="form-control col-sm-12"></textarea>
 
                                         </div>
@@ -1007,7 +1007,7 @@
                                             <label class="form-control-label">
                                                 Summary:
                                             </label>
-                                            <textarea name="Summary" class="form-control col-sm-12"
+                                            <textarea name="Summary" id="id_Summary" class="form-control col-sm-12"
                                             rows="5"></textarea>
 
                                         </div>
@@ -1023,7 +1023,7 @@
                                         </label>
                                         <div class="col-sm-12">
                                             <select class="form-control m-select2"
-                                            id="m_select2_3" name="ProvisionalDiagnosis"
+                                            id="m_select2_5" name="ProvisionalDiagnosis"
                                             multiple="multiple" style="width:100%">
                                             <optgroup label="Alaskan/Hawaiian Time Zone">
                                                 <option value="AK" selected>
@@ -3505,14 +3505,7 @@ Olfactory</p>
 
                                     </div>	
                                     <div class="col-lg-4 m--align-right">	
-                                        <button type="submit" onclick="myFunc()"	
-                                        class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="next">	
-                                        Save	
-                                    </button>
-                                    <button type="submit" onclick="myFunc()"	
-                                    class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">	
-                                    Submit	
-                                </button>		
+                               
 
 
                                 <button id="mybtn1" type="submit"	
@@ -4637,13 +4630,22 @@ $("#userLogin").autocomplete({
 $(document).ready(function(){
     $('input').attr('readonly', 'readonly')
     $('textarea').attr('readonly', 'readonly')
+    $('select').attr('disabled', 'true')
     $('#name').val(localStorage.getItem("Name"))
     $('#number').val(localStorage.getItem("Age"))
     $('#number1').val(localStorage.getItem("Opno"))
     $('#number2').val(localStorage.getItem("Ipno"))
-    $('#exampleTextarea').val(localStorage.getItem("Address"))
-    $('#number3').val(localStorage.getItem("Phoneno"))
+    $('#addressfield').val(localStorage.getItem("Address"))
+    $('#Phoneno').val(localStorage.getItem("Phoneno"))
     $('#m_select2_4').val(localStorage.getItem("ChiefComplaints"))
+    $('#id_Summary').val(localStorage.getItem("Summary"))
+    $('#id_Examinedby').val(localStorage.getItem("Examinedby"))
+    $('#id_Verifiedby').val(localStorage.getItem("Verifiedby"))
+    $('#history').val(localStorage.getItem("Historyofillness"))
+    $('#medication_history').val(localStorage.getItem("Medicationhistroy"))
+
+    
+    
     if(localStorage.getItem("Alcohol").toString()=="true"){
       $('#id_Alcohol').prop('checked',true);
     }
@@ -4660,6 +4662,7 @@ $(document).ready(function(){
     if(localStorage.getItem("Sleep").toString()=="true"){
       $('#id_Sleep').prop('checked',true);
     }
+    
     
     
     var $radios = $('input:radio[name=genderChoice]');

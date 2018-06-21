@@ -672,7 +672,7 @@ $(document).ready(function() {
 		{ "data": "Age" },
 		{ "data": "genderChoice" },
 		{ "data": "Kureid" },
-		{"defaultContent":"<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>View</button>"}
+		{"defaultContent":"<button type='button' class='btn btn-primary'>View</button>"}
 
 		],
 
@@ -690,6 +690,7 @@ $(document).ready(function() {
 		 var Kureid = data.Kureid;
 		 var Phoneno = data.Phoneno;
 		 var Address = data.Address;
+		
 		 var ChiefComplaints = data.ChiefComplaints;
 		 var Historyofillness = data.Historyofillness;
 		 var PastHistory = data.PastHistory;
@@ -703,6 +704,7 @@ $(document).ready(function() {
 		 var ProvisionalDiagnosis = data.ProvisionalDiagnosis;
 		 var Examinedby = data.Examinedby;
 		 var Verifiedby = data.Verifiedby;
+		 
 
    localStorage.setItem("Name",Name);
    localStorage.setItem("Age",Age);
@@ -711,7 +713,6 @@ $(document).ready(function() {
    localStorage.setItem("Ipno",Ipno);
    localStorage.setItem("Kureid",Kureid);
    localStorage.setItem("Address",Address);
-   localStorage.setItem("Phoneno",Phoneno);
    localStorage.setItem("Phoneno",Phoneno);
    localStorage.setItem("ChiefComplaints",ChiefComplaints);
    localStorage.setItem("Historyofillness",Historyofillness);
@@ -726,6 +727,7 @@ $(document).ready(function() {
    localStorage.setItem("ProvisionalDiagnosis",ProvisionalDiagnosis);
    localStorage.setItem("Examinedby",Examinedby);
    localStorage.setItem("Verifiedby",Verifiedby);
+
    window.location.href = 'http://127.0.0.1:8000/createpatientautfill/'
 		// alert("Name of the patient: "+data.Name+"\n"+"Age of the patient: "+data.Age+"\n"+"Gender: "+data.genderChoice+"\n"+"Kureid: "+data.Kureid)
 /*		document.getElementById('patientData').innerHTML = "Name of the patient: "+data.Name+"<br>"+"Age of the patient: "+data.Age+"<br>"+"Gender: "+data.genderChoice+"<br>"+"Kureid: "+data.Kureid
