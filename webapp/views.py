@@ -48,6 +48,14 @@ class CreatePatientForm(LoginRequiredMixin,CreateView):
 	form_class = myForm
 	success_url = 'webapp/stepOneModel_list.html'
 	reportlab.rl_config.warnOnMissingFontGlyphs = 0
+
+
+class CreatePatientAutofilledForm(LoginRequiredMixin,CreateView):
+	login_url = '/login/'
+	template_name = 'webapp/createPatientautofill.html'
+	form_class = myForm
+	success_url = 'webapp/stepOneModel_list.html'
+	reportlab.rl_config.warnOnMissingFontGlyphs = 0
 	
 #class dashboard(LoginRequiredMixin,APIView):
 #	login_url='/login/'

@@ -14,4 +14,10 @@ class patientSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = formModel
-		fields = ('Name', 'Age', 'genderChoice', 'Kureid')
+		fields = ('Name', 'Age', 'genderChoice', 'Kureid',
+			'Opno','Ipno','Address','Phoneno',
+			'ChiefComplaints','Historyofillness',
+			'PastHistory','FamilyHistory','ProvisionalDiagnosis',
+			'Medicationhistroy','Alcohol','Smoking','Bowel','Bladder',
+			'Sleep','Summary','Examinedby','Verifiedby'
+			)
