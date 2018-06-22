@@ -19,5 +19,7 @@ class patientSerializer(serializers.ModelSerializer):
 			'ChiefComplaints','Historyofillness',
 			'PastHistory','FamilyHistory','ProvisionalDiagnosis',
 			'Medicationhistroy','Alcohol','Smoking','Bowel','Bladder',
-			'Sleep','Summary','Examinedby','Verifiedby'
+			'Sleep','Summary','Examinedby','Verifiedby','PulseRate',
+			'Systolic','Diastolic','Temperature','pl','Palar','Clubbing',
+			'Ictreus','Lymphadenopathy','Cyanosis','PittingEdema'
 			)
