@@ -682,13 +682,19 @@ $('div:nth-child(2)')
                 {"data": "Age"},
                 {"data": "genderChoice"},
                 {"data": "Kureid"},
-                {"defaultContent": "<button type='button' class='btn btn-primary'>View</button>"}
+                {"defaultContent": "<button class='viewbuttons btn-primary' type='button'>View</button> <button class='testclass btn-primary' type='button'>Edit</button>"},
 
             ],
 
 
         });
-        $('#example tbody').on('click', 'button', function () {
+
+        $('#example tbody').on('click', '.testclass', function () {
+            var data = table.row($(this).parents('tr')).data();
+            window.location.href = 'http://127.0.0.1:8000/updatepatient/'+data.id;
+        });
+
+        $('#example tbody').on('click', '.viewbuttons', function () {
             var data = table.row($(this).parents('tr')).data();
             var Name = data.Name;
             var Age = data.Age;
@@ -722,7 +728,20 @@ $('div:nth-child(2)')
             var Lymphadenopathy = data.Lymphadenopathy;
             var Cyanosis = data.Cyanosis;
             var PittingEdema = data.PittingEdema;
-         
+            var SubcutaneousMarkers = data.SubcutaneousMarkers;
+            var SkeletalExamination = data.SkeletalExamination;
+            var EyeResponse = data.EyeResponse;
+            var VerbalResponse = data.VerbalResponse;
+            var MotorResponse = data.MotorResponse;
+            var MMSE = data.MMSE;
+            var NHISscore = data.NHISscore;
+            var Appearance = data.Appearance;
+            var Handedness = data.Handedness;
+            var Orientation = data.Orientation;
+            var Emotion = data.Emotion;
+            var Memory = data.Memory;
+            var SpontaneosSpeech = data.SpontaneosSpeech;
+            
 
             localStorage.setItem("Name", Name);
             localStorage.setItem("Age", Age);
@@ -755,10 +774,24 @@ $('div:nth-child(2)')
             localStorage.setItem("Lymphadenopathy", Lymphadenopathy);
             localStorage.setItem("Cyanosis", Cyanosis);
             localStorage.setItem("PittingEdema", PittingEdema);
+            localStorage.setItem("SubcutaneousMarkers", SubcutaneousMarkers);
+            localStorage.setItem("SkeletalExamination", SkeletalExamination);
+            localStorage.setItem("EyeResponse", EyeResponse);
+            localStorage.setItem("VerbalResponse", VerbalResponse);
+            localStorage.setItem("MotorResponse", MotorResponse);
+            localStorage.setItem("MMSE", MMSE);
+            localStorage.setItem("NHISscore", NHISscore);
+            localStorage.setItem("Appearance", Appearance);
+            localStorage.setItem("Handedness", Handedness);
+            localStorage.setItem("Orientation", Orientation);
+            localStorage.setItem("Emotion", Emotion);
+            localStorage.setItem("Memory", Memory);
+            localStorage.setItem("SpontaneosSpeech", SpontaneosSpeech);
 
 
 
             window.location.href = 'http://127.0.0.1:8000/createpatientautfill/'
+
             // alert("Name of the patient: "+data.Name+"\n"+"Age of the patient: "+data.Age+"\n"+"Gender: "+data.genderChoice+"\n"+"Kureid: "+data.Kureid)
             /*		document.getElementById('patientData').innerHTML = "Name of the patient: "+data.Name+"<br>"+"Age of the patient: "+data.Age+"<br>"+"Gender: "+data.genderChoice+"<br>"+"Kureid: "+data.Kureid
         +"<br>"+"Opno: "+data.Opno+"<br>"+"Ipno: "+data.Ipno+"<br>"+"Address: "+data.Address

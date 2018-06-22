@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from .models import formModel
 from .serializers import patientSerializer
-from django.views.generic import TemplateView,CreateView,ListView,TemplateView
+from django.views.generic import TemplateView,CreateView,ListView,TemplateView,UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework.renderers import StaticHTMLRenderer
 from .forms import myForm
@@ -88,3 +88,9 @@ class PatientsList(LoginRequiredMixin,APIView):
 class ThankYouPage(TemplateView):
 	template_name = 'webapp/thankyou.html'
 
+
+class PatientUpdate(UpdateView):
+    model = formModel
+    form_class = myForm
+    template_name = 'webapp/editpatient.html'
+    success_url = '/'
