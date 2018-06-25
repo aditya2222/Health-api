@@ -754,6 +754,7 @@ $('div:nth-child(2)')
             var NystagmusLeft = data.NystagmusLeft;
             var NystagmusRight = data.NystagmusRight;
             var MovemenstLeft = data.MovemenstLeft;
+            var MovemenstRight = data.MovemenstRight;
             var PupilLeft = data.PupilLeft;
             var PupilRight = data.PupilRight;
             var Lightreflexleft = data.Lightreflexleft;
@@ -766,7 +767,6 @@ $('div:nth-child(2)')
             var nystagmusright12 = data.nystagmusright12;
             var accomodationLeft = data.accomodationLeft;
             var accomodationRight = data.accomodationRight;
-            var sensoryLeft12 = data.sensoryLeft12;
             var motorLeft = data.motorLeft;
             var motorRight = data.motorRight;
             var jawjerk = data.jawjerk;
@@ -782,6 +782,8 @@ $('div:nth-child(2)')
             var tasteright = data.tasteright;
             var SensoryLeft = data.SensoryLeft;
             var SensoryRight = data.SensoryRight;
+	        var sensoryRight12 = data.sensoryRigh12;
+	        var sensoryLeft12 = data.sensoryLeft12;
             var rhombusleft = data.rhombusleft;
             var rhombusright = data.rhombusright;
             var rinnesleft = data.rinnesleft;
@@ -802,12 +804,33 @@ $('div:nth-child(2)')
             var trapeziusright = data.trapeziusright;
             var scmleft = data.scmleft;
             var scmright = data.scmright;
-            var poweroftongueleft = data.poweroftongueleft;            
-
-
-
-
-
+            var poweroftongueleft = data.poweroftongueleft;
+            var poweroftongueright = data.poweroftongueright;
+            var wastingleft = data.wastingleft;
+            var wastingright = data.wastingright;
+            var protrusion = data.protrusion;
+            var toneleft = data.toneleft;
+            var toneright = data.toneright;
+            var bulkleft = data.bulkleft;
+            var bulkright = data.bulkright;
+            var abductionleft = data.abductionleft;
+            var abductionright = data.abductionright;
+            var adductionleft = data.adductionleft;
+            var adductionright = data.adductionright;
+            var flexionleft = data.flexionleft;
+            var flexionright = data.flexionright;
+            var extensionleft = data.extensionleft;
+            var extensionright = data.extensionright;
+            var FlexionLeft12 = data.FlexionLeft12;
+            var FlexionRight12 = data.FlexionRight12;
+            var flexionleft1 = data.flexionleft1;
+            var flexionright1 = data.flexionright1;
+            var extensionleft1 = data.extensionleft1;
+            var extensionright1 = data.extensionright1;
+            var HangGripleft = data.HangGripleft;
+            var HangGripright = data.HangGripright;
+            var toneleft1 = data.toneleft1;
+            var toneright1 = data.toneright1;
 
 
 
@@ -864,11 +887,12 @@ $('div:nth-child(2)')
             localStorage.setItem("ColorVisionRIght", ColorVisionRIght);
             localStorage.setItem("FieldLeft", FieldLeft);
             localStorage.setItem("FieldRight", FieldRight);
-            localStorage.setItem("FundusLeft", FundusRight);
+            localStorage.setItem("FundusLeft", FundusLeft);
+            localStorage.setItem("FundusRight", FundusRight);
             localStorage.setItem("NystagmusLeft", NystagmusLeft);
             localStorage.setItem("NystagmusRight", NystagmusRight);
             localStorage.setItem("MovemenstLeft", MovemenstLeft);
-            localStorage.setItem("MovemenstLeft", MovemenstLeft);
+            localStorage.setItem("MovemenstRight", MovemenstRight);
             localStorage.setItem("PupilLeft", PupilLeft);
             localStorage.setItem("PupilRight", PupilRight);
             localStorage.setItem("Lightreflexleft", Lightreflexleft);
@@ -900,24 +924,45 @@ $('div:nth-child(2)')
             localStorage.setItem("rhombusleft", rhombusleft);
             localStorage.setItem("rhombusright", rhombusright);
             localStorage.setItem("rinnesleft", rinnesleft);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
-            localStorage.setItem("SensoryRight", SensoryRight);
+            localStorage.setItem("rinnesright", rinnesright);
+            localStorage.setItem("webbers",webbers);
+            localStorage.setItem("ABCleft", ABCleft);
+            localStorage.setItem("ABCright", ABCright);
+            localStorage.setItem("motorLeft1", motorLeft1);
+            localStorage.setItem("sensoryRight1", sensoryRight1);
+            localStorage.setItem("sensoryLeft1", sensoryLeft1);
+            localStorage.setItem("motorRight1", motorRight1);
+            localStorage.setItem("Gagleft", Gagleft);
+            localStorage.setItem("GagRight", GagRight);
+            localStorage.setItem("palatalleft", palatalleft);
+            localStorage.setItem("palatalright", palatalright);
+            localStorage.setItem("uvula", uvula);
+            localStorage.setItem("trapeziusleft", trapeziusleft);
+            localStorage.setItem("trapeziusright", trapeziusright);
+            localStorage.setItem("scmleft", scmleft);
+            localStorage.setItem("scmright", scmright);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+            localStorage.setItem("poweroftongueleft", poweroftongueleft);
+
+
+
+
+
+
+
 
 
 

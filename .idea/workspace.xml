@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3dab6d9-a4f7-461d-a463-60e3de7545fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,25 +18,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="formmodel_list.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="734" column="77" selection-start-line="734" selection-start-column="57" selection-end-line="734" selection-end-column="77" />
+            <state relative-caret-position="229">
+              <caret line="47" column="59" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createPatientautofill.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="formmodel_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="883" column="47" selection-start-line="883" selection-start-column="34" selection-end-line="883" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createPatientautofill.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75120">
-              <caret line="5008" selection-start-line="5008" selection-end-line="5008" />
+            <state relative-caret-position="154">
+              <caret line="1870" column="61" selection-start-line="1870" selection-start-column="61" selection-end-line="1870" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>poweroftong</find>
+      <find>hanggr</find>
+      <find>FlexionLeft12</find>
+      <find>rinnesleft</find>
+      <find>memor</find>
+      <find>sponta</find>
+      <find>SpontaneosSpeech</find>
+      <find>olfac</find>
+      <find>OlfactoryLeft</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,8 +69,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html" />
+        <option value="$PROJECT_DIR$/webapp/serializers.py" />
         <option value="$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html" />
+        <option value="$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html" />
       </list>
     </option>
   </component>
@@ -158,6 +185,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="25" width="1851" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -165,8 +193,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32910052" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959481" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32910052" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959481" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -189,6 +217,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11010">
+          <caret line="734" column="51" lean-forward="true" selection-start-line="734" selection-start-column="51" selection-end-line="734" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75120">
+          <caret line="5008" selection-start-line="5008" selection-end-line="5008" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11010">
@@ -217,17 +259,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html">
+    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75120">
-          <caret line="5008" selection-start-line="5008" selection-end-line="5008" />
+        <state relative-caret-position="199">
+          <caret line="883" column="47" selection-start-line="883" selection-start-column="34" selection-end-line="883" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/formmodel_list.html">
+    <entry file="file://$PROJECT_DIR$/webapp/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="734" column="77" selection-start-line="734" selection-start-column="57" selection-end-line="734" selection-end-column="77" />
+        <state relative-caret-position="229">
+          <caret line="47" column="59" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/templates/webapp/createPatientautofill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="1870" column="61" selection-start-line="1870" selection-start-column="61" selection-end-line="1870" selection-end-column="61" />
         </state>
       </provider>
     </entry>
