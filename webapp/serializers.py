@@ -53,7 +53,7 @@ class patientSerializer(serializers.ModelSerializer):
       'eversionleft', 'eversionright', 'ehlleft', 'ehlright',
       'abornmalmovementsleft', 'abnormalmovementsright', 'upperlimbleft', 'upperlimbright', 'trunkleft',
       'trunkright', 'lowerLimbleft', 'lowerLimbright',
-      'upperlimbleft1', 'upperlimbright1', 'trunkleft1', 'trunkright1', 'lowerLimbleft1', 'lowerLimbleft1',
+      'upperlimbleft1', 'upperlimbright1', 'trunkleft1', 'trunkright1', 'lowerLimbleft1', 'lowerLimbright1',
       'vibrationLeft', 'vibrationRight',
       'JPSleft', 'JPSright', 'bicepsleft', 'bicepsright', 'tricepsleft', 'tricepsright', 'supinatorleft',
       'supinatorright', 'Kneeleft', 'Kneeright',
@@ -63,5 +63,5 @@ class patientSerializer(serializers.ModelSerializer):
       'pectoralRight', 'rombers', 'fingerNoseTextleft',
       'fingerNoseTextright', 'pendularKneeJerkleft', 'pendularKneeJerkright', 'kneeHelltestleft',
       'kneeHelltestright', 'othersLeft', 'othersRight',
-      'CVS', 'Abdomen', 'RespiratorySystem', 'Section4Name'
+      'CVS', 'Abdomen', 'RespiratorySystem'
       )
