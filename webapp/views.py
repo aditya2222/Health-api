@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from .models import formModel
 from .serializers import patientSerializer
-from django.views.generic import TemplateView,CreateView,ListView,TemplateView,UpdateView
+from django.views.generic import TemplateView,CreateView,ListView,TemplateView,UpdateView,DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework.renderers import StaticHTMLRenderer
 from .forms import myForm
@@ -16,6 +16,7 @@ from django.utils.decorators import method_decorator
 from reportlab.pdfgen import canvas
 import reportlab.rl_config
 import json
+from django.template.loader import get_template
 
 
 # Create your views here.
@@ -94,3 +95,45 @@ class PatientUpdate(UpdateView):
     form_class = myForm
     template_name = 'webapp/editpatient.html'
     success_url = '/'
+
+
+
+
+from django.http import HttpResponse
+from django.views.generic import View
+
+from webapp.utils import render_to_pdf #created in step 4
+
+class GeneratePDF(DetailView):
+	model = formModel
+	def get(self, request, *args, **kwargs):
+	    template = get_template('webapp/invoice.html')
+	    context = {
+	        "Kureid": self.get_object().Kureid,
+	        "Name": self.get_object().Name,
+	        "Age": self.get_object().Age,	
+	        "Gender": self.get_object().genderChoice,
+	        "Ipno": self.get_object().Ipno,
+	        "Opno": self.get_object().Opno,
+	        "Address": self.get_object().Address,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	        "Gender": self.get_object().genderChoice,
+	    }
+	    html = template.render(context)
+	    pdf = render_to_pdf('webapp/invoice.html', context)
+	    if pdf:
+	        response = HttpResponse(pdf, content_type='application/pdf')
+	        filename = "patientdetails.pdf"
+	        content = "inline; filename='%s'" %(filename)
+	        download = request.GET.get("download")
+	        if download:
+	            content = "attachment; filename='%s'" %(filename)
+	        response['Content-Disposition'] = content
+	        return response
+	    return HttpResponse("Not found")

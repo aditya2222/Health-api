@@ -682,11 +682,16 @@ $('div:nth-child(2)')
                 {"data": "Age"},
                 {"data": "genderChoice"},
                 {"data": "Kureid"},
-                {"defaultContent": "<button class='viewbuttons btn-primary' type='button'>View</button> <button class='testclass btn-primary' type='button'>Edit</button>"},
+                {"defaultContent": "<button class='viewbuttons btn-primary' type='button'>View</button> <button class='testclass btn-primary' type='button'>Edit</button> <button class='pdf btn-primary' type='button'>Generate PDF</button>"},
 
             ],
 
 
+        });
+
+        $('#example tbody').on('click', '.pdf', function () {
+            var data = table.row($(this).parents('tr')).data();
+            window.location.href = 'http://127.0.0.1:8000/generatepdf/'+data.id;
         });
 
         $('#example tbody').on('click', '.testclass', function () {

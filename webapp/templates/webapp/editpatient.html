@@ -547,7 +547,7 @@
                                                         id="m_select2_4" name="ChiefComplaints"
                                                         multiple="multiple" style="width:100%">
                                                         <optgroup label="Finding">
-                                                            <option value=161891005>{{form.ChiefComplaints.value}}</option>
+                                                            <option value=161891005>None</option>
 
                                                         </optgroup>
                                                         
@@ -1401,8 +1401,8 @@
                                     Temperature:
                                 </label><br>
 
-                                <input type="text" id="number7" value="{{form.Temperature.value}}" 
-                                class="form-control col-sm-3"
+                                <input type="number"  value="{{form.Temperature.value}}" 
+                                class="form-control col-sm-3" id="number7"
                                 name="Temperature">
                             </div>
                         </div>
@@ -1976,7 +1976,7 @@ Olfactory</p>
                        style=" "
                        class="form-control"
                        name="MovemenstRight"></td>
-                       <td width="40%"><input type="text" value="{{forms.MovemenstLeft.value}}" 
+                       <td width="40%"><input type="text" value="{{form.MovemenstLeft.value}}" 
                            style=" "
                            class="form-control"
                            name="MovemenstLeft"></td>
@@ -1984,11 +1984,11 @@ Olfactory</p>
                        </tr>
                        <tr>
                         <th scope="row">Pupil</th>
-                        <td width="40%"><input type="text" value="{{forms.PupilRight.value}}" 
+                        <td width="40%"><input type="text" value="{{form.PupilRight.value}}" 
                            style=" "
                            class="form-control"
                            name="PupilRight"></td>
-                           <td width="40%"><input type="text" value="{{forms.PupilLeft.value}}" 
+                           <td width="40%"><input type="text" value="{{form.PupilLeft.value}}" 
                                style=" "
                                class="form-control"
                                name="PupilLeft"></td>
@@ -2195,11 +2195,11 @@ Olfactory</p>
                                                                        </tr>
                                                                        <tr>
                                                                         <th scope="row">ABC</th>
-                                                                        <td width="40%"><input type="text" value="{{forms.ABCright.value}}" 
+                                                                        <td width="40%"><input type="text" value="{{form.ABCright.value}}" 
                                                                            style=" "
                                                                            class="form-control"
                                                                            name="ABCright"></td>
-                                                                           <td width="40%"><input type="text" value="{{forms.ABCleft.value}}" 
+                                                                           <td width="40%"><input type="text" value="{{form.ABCleft.value}}" 
                                                                                style=" "
                                                                                class="form-control"
                                                                                name="ABCleft"></td>
@@ -3500,17 +3500,12 @@ Olfactory</p>
                                         </a>
 
                                     </div>  
-                            {% if object %}
+                     
                                  <div class="col-lg-4 m--align-right">   
-                                        <button type="submit" onclick="myFunc()"    
-                                        class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="next">  
+                                        <button type="submit"   
+                                        class="btn btn-primary" onclick="myFunc()">  
                                         Update    
                                     </button>
-                            {% endif %}
-                                   
-                         
-
-
 
                                 <button id="mybtn1" type="submit"   
                                 class="btn btn-warning m-btn m-btn--custom m-btn--icon" 
@@ -4165,13 +4160,7 @@ type="text/javascript"></script>
 type="text/javascript"></script>
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!--end::Page Resources -->
-<script language="JavaScript">
-function myFunc() {
 
-    document.getElementById('m_form').submit();
-
-}
-</script>
 
 <script>
 $(function () {
@@ -4663,6 +4652,15 @@ if ($radios.is(':checked') === false) {
 </script>
 
 
+
+
+<script language="JavaScript">
+function myFunc() {
+
+    document.getElementById('m_form').submit();
+
+}
+</script>
 
 </body>
 <!-- end::Body -->
