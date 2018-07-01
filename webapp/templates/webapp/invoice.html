@@ -1,57 +1,118 @@
 <html>
-     <head>
-         <title>Title</title>
-         <style type="text/css">
-             body {
-                 font-weight: 200;
-                 font-size: 14px;
-             }
-             .header {
-                 font-size: 20px;
-                 font-weight: 100;
-                 text-align: center;
-                 color: #007cae;
-             }
-             .title {
-                 font-size: 22px;
-                 font-weight: 100;
-                /* text-align: right;*/
-                padding: 10px 20px 0px 20px;  
-             }
-             .title span {
-                 color: #007cae;
-             }
-             .details {
-                 padding: 10px 20px 0px 20px;
-                 text-align: left !important;
-                 /*margin-left: 40%;*/
-             }
-             .hrItem {
-                 border: none;
-                 height: 1px;
-                 /* Set the hr color */
-                 color: #333; /* old IE */
-                 background-color: #fff; /* Modern Browsers */
-             }
-         </style>
-     </head>
-     <body>
-         <div class='wrapper'>
-             <div class='header'>
-                 <p class='title'>Patient Details</p>
-             </div>
-         <div>
-         <div class='details'>
-             Kure ID: {{Kureid}} <br/>
-             Name: {{Name}}  <br/>
-             Age: {{Age}}<br>
-             Gender: {{Gender}}<br>
-             IP No: {{Ipno}}<br>
-             OP No: {{Opno}}<br>
-             Address: {{Address}} <br>
+<head>
+   <title>{{Name}} Details</title>
+   <style type="text/css">
+   body {
+       font-weight: 200;
+       font-size: 14px;
+   }
+   .header {
+       font-size: 20px;
+       font-weight: 100;
+       text-align: center;
+       color: #007cae;
+   }
+   .title {
+       font-size: 22px;
+       font-weight: 100;
+       /* text-align: right;*/
+       padding: 10px 20px 0px 20px;  
+   }
+   .title span {
+       color: #007cae;
+   }
+   .details {
+       padding: 10px 20px 0px 20px;
+       text-align: left !important;
+       /*margin-left: 40%;*/
+   }
+   .hrItem {
+       border: none;
+       height: 1px;
+       /* Set the hr color */
+       color: #333; /* old IE */
+       background-color: #fff; /* Modern Browsers */
+   }
+   </style>
+</head>
+<body>
+   <div class='wrapper'>
+       <div class='header'>
+           <p class='title'>Patient {{Name}} Details</p>
+       </div>
+       <div>
+           <div class='details'>
+               Kure ID: {{Kureid}} <br/>
+               Name: {{Name}}  <br/>
+               Age: {{Age}}<br>
+               Gender: {{Gender}}<br>
+               IP No: {{Ipno}}<br>
+               OP No: {{Opno}}<br>
+               Address: {{Address}} <br>
+               Phone Number: {{Phoneno}} <br>
+               Historyofillness: {{Historyofillness}} <br>
+               Medicationhistroy: {{Medicationhistroy}} <br>
+               Alcohol: {{Alcohol}} <br>
+               Smoking: {{Smoking}} <br>
+               Bowel: {{Bowel}} <br>
+               Bladder: {{Bladder}} <br>
+               Sleep: {{Sleep}} <br>
+               Summary: {{Summary}} <br>
+               Examinedby: {{Examinedby}} <br>
+               Verifiedby: {{Verifiedby}} <br>
+               PulseRate: {{PulseRate}} <br>
+               Systolic: {{Systolic}} <br>
+               Diastolic: {{Diastolic}} <br>
+               Temperature: {{Temperature}}<br>
+               Palar: {{Palar}}<br>
+               Clubbing: {{Clubbing}}<br>
+               Ictreus: {{Ictreus}}<br>
+               Cyanosis: {{Cyanosis}}<br>
+               PittingEdema: {{PittingEdema}}<br>
+               Lymphadenopathy: {{Lymphadenopathy}}<br>
+               SubcutaneousMarkers: {{SubcutaneousMarkers}} <br>
+               SkeletalExamination: {{SkeletalExamination}} <br>
+               EyeResponse: {{EyeResponse}} <br>
+               VerbalResponse: {{VerbalResponse}} <br>
+               MotorResponse: {{MotorResponse}} <br>
+               MMSE: {{MMSE}} <br>
+               NHISscore: {{NHISscore}} <br>
+               Appearance: {{Appearance}} <br>
+               Handedness: {{Handedness}} <br>
+               Orientation: {{Orientation}} <br>
+               Emotion: {{Emotion}} <br>
+               SpontaneosSpeech: {{SpontaneosSpeech}} <br>
+               Memory: {{Memory}} <br>
+               OlfactoryRight: {{OlfactoryRight}} <br>
+               OlfactoryLeft: {{OlfactoryLeft}} <br>
+               VisualAcuityRight: {{VisualAcuityRight}} <br>
+               VisualAcuityLeft: {{VisualAcuityLeft}} <br>
+               ColorVisionRIght: {{ColorVisionRIght}} <br>
+               ColorVisionLeft: {{ColorVisionLeft}} <br>
+               FieldRight: {{FieldRight}} <br>
+               FieldLeft: {{FieldLeft}} <br>
+               FundusRight: {{FundusRight}} <br>
+               FundusLeft: {{FundusLeft}} <br>
+               NystagmusRight: {{NystagmusRight}} <br>
+               NystagmusLeft: {{NystagmusLeft}} <br>
+               MovemenstRight: {{MovemenstRight}} <br>
+               MovemenstLeft: {{MovemenstLeft}} <br>
+               PupilRight: {{PupilRight}} <br>
+               PupilLeft: {{PupilLeft}} <br>
+               DirectRight: {{DirectRight}} <br>
+               DirectLeft: {{DirectLeft}} <br>
+               ConsensualRight: {{ConsensualRight}} <br>
+               ConsensualLeft: {{ConsensualLeft}} <br>
+               accomodationRight: {{accomodationRight}} <br>
+               accomodationLeft: {{accomodationLeft}} <br>
+               sensoryRight: {{sensoryRight12}} <br>
+               sensoryLeft: {{sensoryLeft12}} <br>
+               motorRight: {{motorRight}} <br>
+               motorLeft: {{motorLeft}} <br>
+               jawjerk: {{jawjerk   }} <br>
+               <hr class='hrItem' />
+           </div>
+       </div>
 
-             <hr class='hrItem' />
-         </div>
-     </div>
-     </body>
- </html>
+   </body>
+   </html>

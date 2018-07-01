@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from .models import formModel
-from .serializers import patientSerializer
+from .serializers import patientSerializer,tableSerializer
 from django.views.generic import TemplateView,CreateView,ListView,TemplateView,UpdateView,DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from rest_framework.renderers import StaticHTMLRenderer
@@ -76,6 +76,13 @@ class PatientsList(LoginRequiredMixin,APIView):
 		patients=formModel.objects.all()
 		serializer = patientSerializer(patients,many=True)
 		return Response(serializer.data)
+
+
+class tableintializeView(APIView):
+	def get(self,request):
+		patients=formModel.objects.all()
+		serializer = tableSerializer(patients,many=True)
+		return Response(serializer.data)
 #class PatientsList(LoginRequiredMixin,ListView):
 #	login_url='/login/'
 #	model = formModel
@@ -96,7 +103,10 @@ class PatientUpdate(UpdateView):
     template_name = 'webapp/editpatient.html'
     success_url = '/'
 
-
+class ViewPatient(UpdateView):
+    model = formModel
+    form_class = myForm
+    template_name = 'webapp/createPatientautofill.html'
 
 
 from django.http import HttpResponse
@@ -109,6 +119,7 @@ class GeneratePDF(DetailView):
 	def get(self, request, *args, **kwargs):
 	    template = get_template('webapp/invoice.html')
 	    context = {
+	    	"Name": self.get_object().Name,
 	        "Kureid": self.get_object().Kureid,
 	        "Name": self.get_object().Name,
 	        "Age": self.get_object().Age,	
@@ -116,15 +127,127 @@ class GeneratePDF(DetailView):
 	        "Ipno": self.get_object().Ipno,
 	        "Opno": self.get_object().Opno,
 	        "Address": self.get_object().Address,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	        "Gender": self.get_object().genderChoice,
-	    }
+	        "Phoneno": self.get_object().Phoneno,
+	        "Historyofillness": self.get_object().Historyofillness,
+	        "Medicationhistroy": self.get_object().Medicationhistroy,
+	        "Alcohol": self.get_object().Alcohol,
+	        "Smoking": self.get_object().Smoking,
+	        "Bowel": self.get_object().Bowel,
+	        "Bladder": self.get_object().Bladder,
+	        "Summary": self.get_object().Summary,
+	        "Examinedby": self.get_object().Examinedby,
+	        "Verifiedby": self.get_object().Verifiedby,
+	        "PulseRate": self.get_object().PulseRate,
+	        "Systolic": self.get_object().Systolic,
+	        "Diastolic": self.get_object().Diastolic,
+	        "Temperature": self.get_object().Temperature,
+	        "Palar": self.get_object().Palar,
+	        "Clubbing": self.get_object().Clubbing,
+	        "Ictreus": self.get_object().Ictreus,
+	        "Cyanosis": self.get_object().Cyanosis,
+	        "PittingEdema": self.get_object().PittingEdema,
+	        "Lymphadenopathy": self.get_object().Lymphadenopathy,
+	        "SubcutaneousMarkers": self.get_object().SubcutaneousMarkers,
+	        "SkeletalExamination": self.get_object().SkeletalExamination,
+	        "EyeResponse": self.get_object().EyeResponse,
+	        "VerbalResponse": self.get_object().VerbalResponse,
+	        "MotorResponse": self.get_object().MotorResponse,
+	        "MMSE": self.get_object().MMSE,
+	        "NHISscore": self.get_object().NHISscore,
+	        "Appearance": self.get_object().Appearance,
+	        "Handedness": self.get_object().Handedness,
+	        "Orientation": self.get_object().Orientation,
+	        "Emotion": self.get_object().Emotion,
+	        "Memory": self.get_object().Memory,
+	        "SpontaneosSpeech": self.get_object().SpontaneosSpeech,
+	        "OlfactoryRight": self.get_object().OlfactoryRight,
+	        "OlfactoryLeft": self.get_object().OlfactoryLeft,
+	        "VisualAcuityRight": self.get_object().VisualAcuityRight,
+	        "VisualAcuityLeft": self.get_object().VisualAcuityLeft,
+	        "ColorVisionRIght": self.get_object().ColorVisionRIght,
+	        "ColorVisionLeft": self.get_object().ColorVisionLeft,
+	        "FieldRight": self.get_object().FieldRight,
+	        "FieldLeft": self.get_object().FieldLeft,
+	        "FundusRight": self.get_object().FundusRight,
+	        "FundusLeft": self.get_object().FundusLeft,
+	        "NystagmusRight": self.get_object().NystagmusRight,
+	        "NystagmusLeft": self.get_object().NystagmusLeft,
+	        "MovemenstRight": self.get_object().MovemenstRight,
+	        "MovemenstLeft": self.get_object().MovemenstLeft,
+	        "PupilRight": self.get_object().PupilRight,
+	        "PupilLeft": self.get_object().PupilLeft,
+	        "DirectRight": self.get_object().DirectRight,
+	        "DirectLeft": self.get_object().DirectLeft,
+	        "ConsensualRight": self.get_object().ConsensualRight,
+	        "ConsensualLeft": self.get_object().ConsensualLeft,
+	        "accomodationRight": self.get_object().accomodationRight,
+	        "accomodationLeft": self.get_object().accomodationLeft,
+	        "sensoryRight12": self.get_object().sensoryRight12,
+	        "sensoryLeft12": self.get_object().sensoryLeft12,
+	        "motorRight": self.get_object().motorRight,
+	        "motorLeft": self.get_object().motorLeft,
+	        "jawjerk": self.get_object().jawjerk,
+	        "comealreflexright": self.get_object().comealreflexright,
+	        "comealreflexleft": self.get_object().comealreflexleft,
+	        "eyeclosesureright": self.get_object().eyeclosesureright,
+	        "eyeclosesureleft": self.get_object().eyeclosesureleft,
+	        "facialexpressionsright": self.get_object().facialexpressionsright,
+	        "facialexpressionsleft": self.get_object().facialexpressionsleft,
+	        "tasteright": self.get_object().tasteright,
+	        "tasteleft": self.get_object().tasteleft,
+	        "SensoryRight": self.get_object().SensoryRight,
+	        "SensoryLeft": self.get_object().SensoryLeft,
+	        "rinnesright": self.get_object().rinnesright,
+	        "rinnesleft": self.get_object().rinnesleft,
+	        "webbers": self.get_object().webbers,	
+	        "ABCright": self.get_object().ABCright,
+	        "ABCleft": self.get_object().ABCleft,
+	        "sensoryRight1": self.get_object().sensoryRight1,
+	        "sensoryLeft1": self.get_object().sensoryLeft1,
+	        "motorRight1": self.get_object().motorRight1,
+	        "motorLeft1": self.get_object().motorLeft1,
+	        "GagRight": self.get_object().GagRight,
+	        "Gagleft": self.get_object().Gagleft,
+	        "palatalright": self.get_object().palatalright,
+	        "palatalleft": self.get_object().palatalleft,
+	       	"uvula": self.get_object().uvula,
+	       	"trapeziusright": self.get_object().trapeziusright,
+	       	"trapeziusleft": self.get_object().trapeziusleft,
+	       	"scmright": self.get_object().scmright,
+	       	"scmleft": self.get_object().scmleft,
+	       	"poweroftongueright": self.get_object().poweroftongueright,
+	       	"poweroftongueleft": self.get_object().poweroftongueleft,
+	       	"protrusion": self.get_object().protrusion,
+	       	"wastingleft": self.get_object().wastingleft,
+	       	"wastingright": self.get_object().wastingright,
+	       	"protrusion": self.get_object().protrusion,
+	       	"toneleft": self.get_object().toneleft,
+	       	"toneright": self.get_object().toneright,
+	       	"bulkleft": self.get_object().bulkleft,
+	       	"bulkright": self.get_object().bulkright,
+	       	"shoulderleft": self.get_object().shoulderleft,
+	       	"shoulderright": self.get_object().shoulderright,
+	       	"abductionleft": self.get_object().abductionleft,
+	       	"adductionleft": self.get_object().adductionleft,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+	       	"adductionright": self.get_object().adductionright,
+
+
+
+
+
+
+
+	        	}
 	    html = template.render(context)
 	    pdf = render_to_pdf('webapp/invoice.html', context)
 	    if pdf:

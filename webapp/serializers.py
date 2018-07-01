@@ -65,3 +65,11 @@ class patientSerializer(serializers.ModelSerializer):
       'kneeHelltestright', 'othersLeft', 'othersRight',
       'CVS', 'Abdomen', 'RespiratorySystem'
       )
+
+
+
+class tableSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = formModel
+    fields = ('id', 'Name', 'Age', 'genderChoice', 'Kureid',
+      )
