@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'fkqi3n4!zt!yv3*ndhyu&1!07&7+%^a*r-)i8omlmfm@rg50@y'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -39,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp',
     'rest_framework',
-    'bootstrap3'
+    'bootstrap3',
+    'import_export',
+
 ]
+
+IMPORT_EXPORT_USE_TRANSACTIONS = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'restapi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +80,6 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'restapi.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # django.db.backends.sqlite3
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'my-db',    
+        'NAME': 'my-db',
     }
 }
 # Password validation
@@ -107,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -121,12 +121,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static/')
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'staticfiles/')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles/')]

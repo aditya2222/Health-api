@@ -259,3 +259,12 @@ class formModel(models.Model):
 
     def __str__(self):
         return self.Name
+
+
+
+class SnomedTerms(models.Model):
+    conceptID = models.CharField(max_length=120)
+    description = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.conceptID
